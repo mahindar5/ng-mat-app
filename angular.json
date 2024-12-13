@@ -22,7 +22,8 @@
             "browser": "src/main.ts",
             "polyfills": [],
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
+            "inlineStyleLanguage": true,
+            "statsJson": "scss",
             "assets": [
               {
                 "glob": "**/*",
