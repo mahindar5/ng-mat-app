@@ -6604,7 +6604,35 @@
       "bytes": 174,
       "imports": []
     },
+    "node_modules/@angular/material/prebuilt-themes/azure-blue.css": {
+      "bytes": 6940,
+      "imports": []
+    },
+    "node_modules/@angular/material/prebuilt-themes/cyan-orange.css": {
+      "bytes": 6940,
+      "imports": []
+    },
+    "node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css": {
+      "bytes": 89277,
+      "imports": []
+    },
+    "node_modules/@angular/material/prebuilt-themes/indigo-pink.css": {
+      "bytes": 89007,
+      "imports": []
+    },
     "node_modules/@angular/material/prebuilt-themes/magenta-violet.css": {
+      "bytes": 6940,
+      "imports": []
+    },
+    "node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css": {
+      "bytes": 89883,
+      "imports": []
+    },
+    "node_modules/@angular/material/prebuilt-themes/purple-green.css": {
+      "bytes": 89897,
+      "imports": []
+    },
+    "node_modules/@angular/material/prebuilt-themes/rose-red.css": {
       "bytes": 6940,
       "imports": []
     },
@@ -6613,12 +6641,47 @@
       "imports": []
     },
     "angular:styles/global:styles": {
-      "bytes": 90,
+      "bytes": 521,
       "imports": [
+        {
+          "path": "node_modules/@angular/material/prebuilt-themes/azure-blue.css",
+          "kind": "import-rule",
+          "original": "@angular/material/prebuilt-themes/azure-blue.css"
+        },
+        {
+          "path": "node_modules/@angular/material/prebuilt-themes/cyan-orange.css",
+          "kind": "import-rule",
+          "original": "@angular/material/prebuilt-themes/cyan-orange.css"
+        },
+        {
+          "path": "node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+          "kind": "import-rule",
+          "original": "@angular/material/prebuilt-themes/deeppurple-amber.css"
+        },
+        {
+          "path": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "kind": "import-rule",
+          "original": "@angular/material/prebuilt-themes/indigo-pink.css"
+        },
         {
           "path": "node_modules/@angular/material/prebuilt-themes/magenta-violet.css",
           "kind": "import-rule",
           "original": "@angular/material/prebuilt-themes/magenta-violet.css"
+        },
+        {
+          "path": "node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+          "kind": "import-rule",
+          "original": "@angular/material/prebuilt-themes/pink-bluegrey.css"
+        },
+        {
+          "path": "node_modules/@angular/material/prebuilt-themes/purple-green.css",
+          "kind": "import-rule",
+          "original": "@angular/material/prebuilt-themes/purple-green.css"
+        },
+        {
+          "path": "node_modules/@angular/material/prebuilt-themes/rose-red.css",
+          "kind": "import-rule",
+          "original": "@angular/material/prebuilt-themes/rose-red.css"
         },
         {
           "path": "src/styles.scss",
@@ -7411,11 +7474,32 @@
       "bytes": 131,
       "ng-component": true
     },
-    "styles-76IBYPWT.css": {
+    "styles-I67BTSLU.css": {
       "imports": [],
       "entryPoint": "angular:styles/global:styles",
       "inputs": {
+        "node_modules/@angular/material/prebuilt-themes/azure-blue.css": {
+          "bytesInOutput": 1793
+        },
+        "node_modules/@angular/material/prebuilt-themes/cyan-orange.css": {
+          "bytesInOutput": 1793
+        },
+        "node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css": {
+          "bytesInOutput": 29299
+        },
+        "node_modules/@angular/material/prebuilt-themes/indigo-pink.css": {
+          "bytesInOutput": 50095
+        },
         "node_modules/@angular/material/prebuilt-themes/magenta-violet.css": {
+          "bytesInOutput": 1793
+        },
+        "node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css": {
+          "bytesInOutput": 29682
+        },
+        "node_modules/@angular/material/prebuilt-themes/purple-green.css": {
+          "bytesInOutput": 89346
+        },
+        "node_modules/@angular/material/prebuilt-themes/rose-red.css": {
           "bytesInOutput": 6897
         },
         "src/styles.scss": {
@@ -7425,7 +7509,7 @@
           "bytesInOutput": 0
         }
       },
-      "bytes": 6979
+      "bytes": 210780
     }
   }
 }
