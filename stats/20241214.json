@@ -6716,17 +6716,6 @@
       ],
       "format": "esm"
     },
-    "src/app/style-manager/index.ts": {
-      "bytes": 33,
-      "imports": [
-        {
-          "path": "src/app/style-manager/style-manager.ts",
-          "kind": "import-statement",
-          "original": "./style-manager"
-        }
-      ],
-      "format": "esm"
-    },
     "src/app/theme-picker/theme-storage/theme-storage.ts": {
       "bytes": 1203,
       "imports": [
@@ -6744,7 +6733,7 @@
       "format": "esm"
     },
     "src/app/theme-picker/theme-picker.ts": {
-      "bytes": 6629,
+      "bytes": 6657,
       "imports": [
         {
           "path": "@angular/core",
@@ -6772,7 +6761,7 @@
           "original": "@angular/material/tooltip"
         },
         {
-          "path": "../style-manager",
+          "path": "../style-manager/style-manager",
           "kind": "import-statement",
           "external": true
         },
@@ -6787,9 +6776,9 @@
           "original": "@angular/core"
         },
         {
-          "path": "src/app/style-manager/index.ts",
+          "path": "src/app/style-manager/style-manager.ts",
           "kind": "import-statement",
-          "original": "../style-manager"
+          "original": "../style-manager/style-manager"
         },
         {
           "path": "src/app/theme-picker/theme-storage/theme-storage.ts",
@@ -7470,12 +7459,12 @@
       "bytes": 174,
       "imports": []
     },
-    "src/app/app.component.scss": {
-      "bytes": 91,
-      "imports": []
-    },
     "src/app/theme-picker/theme-picker.scss": {
       "bytes": 413,
+      "imports": []
+    },
+    "src/app/app.component.scss": {
+      "bytes": 91,
       "imports": []
     },
     "src/styles.scss": {
@@ -7606,14 +7595,14 @@
     }
   },
   "outputs": {
-    "main-SBE72KBZ.js": {
+    "main-ZTUXABNH.js": {
       "imports": [
         {
           "path": "chunk-J2TCIIGA.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-YSBCM4SO.js",
+          "path": "chunk-JFUYNL5R.js",
           "kind": "import-statement"
         },
         {
@@ -7633,7 +7622,7 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-P3IGQCQU.js",
+          "path": "chunk-S6RGO63I.js",
           "kind": "dynamic-import"
         },
         {
@@ -7751,10 +7740,10 @@
       },
       "bytes": 68709
     },
-    "chunk-P3IGQCQU.js": {
+    "chunk-S6RGO63I.js": {
       "imports": [
         {
-          "path": "chunk-YSBCM4SO.js",
+          "path": "chunk-JFUYNL5R.js",
           "kind": "import-statement"
         },
         {
@@ -7781,7 +7770,7 @@
       },
       "bytes": 455
     },
-    "chunk-YSBCM4SO.js": {
+    "chunk-JFUYNL5R.js": {
       "imports": [
         {
           "path": "chunk-J7CUCYT3.js",
@@ -7819,9 +7808,6 @@
         },
         "src/app/style-manager/style-manager.ts": {
           "bytesInOutput": 544
-        },
-        "src/app/style-manager/index.ts": {
-          "bytesInOutput": 0
         },
         "src/app/theme-picker/theme-storage/theme-storage.ts": {
           "bytesInOutput": 460
@@ -8569,16 +8555,6 @@
       "bytes": 131,
       "ng-component": true
     },
-    "app.component-EKYXOA4C.css": {
-      "imports": [],
-      "inputs": {
-        "src/app/app.component.scss": {
-          "bytesInOutput": 72
-        }
-      },
-      "bytes": 73,
-      "ng-component": true
-    },
     "theme-picker-42VWRI6L.css": {
       "imports": [],
       "inputs": {
@@ -8587,6 +8563,16 @@
         }
       },
       "bytes": 364,
+      "ng-component": true
+    },
+    "app.component-EKYXOA4C.css": {
+      "imports": [],
+      "inputs": {
+        "src/app/app.component.scss": {
+          "bytesInOutput": 72
+        }
+      },
+      "bytes": 73,
       "ng-component": true
     },
     "styles-E5R2EAIZ.css": {
