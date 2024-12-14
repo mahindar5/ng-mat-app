@@ -7481,115 +7481,59 @@
         }
       ]
     },
-    "node_modules/@angular/material/prebuilt-themes/azure-blue.css": {
-      "bytes": 6940,
+    "src/custom-themes/azure-blue.scss": {
+      "bytes": 7474,
       "imports": []
     },
     "angular:styles/global:azure-blue": {
-      "bytes": 72,
+      "bytes": 44,
       "imports": [
         {
-          "path": "node_modules/@angular/material/prebuilt-themes/azure-blue.css",
+          "path": "src/custom-themes/azure-blue.scss",
           "kind": "import-rule",
-          "original": "node_modules/@angular/material/prebuilt-themes/azure-blue.css"
+          "original": "src/custom-themes/azure-blue.scss"
         }
       ]
     },
-    "node_modules/@angular/material/prebuilt-themes/cyan-orange.css": {
-      "bytes": 6940,
+    "src/custom-themes/cyan-orange.scss": {
+      "bytes": 9026,
       "imports": []
     },
     "angular:styles/global:cyan-orange": {
-      "bytes": 73,
+      "bytes": 45,
       "imports": [
         {
-          "path": "node_modules/@angular/material/prebuilt-themes/cyan-orange.css",
+          "path": "src/custom-themes/cyan-orange.scss",
           "kind": "import-rule",
-          "original": "node_modules/@angular/material/prebuilt-themes/cyan-orange.css"
+          "original": "src/custom-themes/cyan-orange.scss"
         }
       ]
     },
-    "node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css": {
-      "bytes": 89277,
-      "imports": []
-    },
-    "angular:styles/global:deeppurple-amber": {
-      "bytes": 78,
-      "imports": [
-        {
-          "path": "node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-          "kind": "import-rule",
-          "original": "node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css"
-        }
-      ]
-    },
-    "node_modules/@angular/material/prebuilt-themes/indigo-pink.css": {
-      "bytes": 89007,
-      "imports": []
-    },
-    "angular:styles/global:indigo-pink": {
-      "bytes": 73,
-      "imports": [
-        {
-          "path": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "kind": "import-rule",
-          "original": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
-        }
-      ]
-    },
-    "node_modules/@angular/material/prebuilt-themes/magenta-violet.css": {
-      "bytes": 6940,
+    "src/custom-themes/magenta-violet.scss": {
+      "bytes": 9026,
       "imports": []
     },
     "angular:styles/global:magenta-violet": {
-      "bytes": 76,
+      "bytes": 48,
       "imports": [
         {
-          "path": "node_modules/@angular/material/prebuilt-themes/magenta-violet.css",
+          "path": "src/custom-themes/magenta-violet.scss",
           "kind": "import-rule",
-          "original": "node_modules/@angular/material/prebuilt-themes/magenta-violet.css"
+          "original": "src/custom-themes/magenta-violet.scss"
         }
       ]
     },
-    "node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css": {
-      "bytes": 89883,
-      "imports": []
-    },
-    "angular:styles/global:pink-bluegrey": {
-      "bytes": 75,
-      "imports": [
-        {
-          "path": "node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
-          "kind": "import-rule",
-          "original": "node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css"
-        }
-      ]
-    },
-    "node_modules/@angular/material/prebuilt-themes/purple-green.css": {
-      "bytes": 89897,
-      "imports": []
-    },
-    "angular:styles/global:purple-green": {
-      "bytes": 74,
-      "imports": [
-        {
-          "path": "node_modules/@angular/material/prebuilt-themes/purple-green.css",
-          "kind": "import-rule",
-          "original": "node_modules/@angular/material/prebuilt-themes/purple-green.css"
-        }
-      ]
-    },
-    "node_modules/@angular/material/prebuilt-themes/rose-red.css": {
-      "bytes": 6940,
+    "src/custom-themes/rose-red.scss": {
+      "bytes": 7474,
       "imports": []
     },
     "angular:styles/global:rose-red": {
-      "bytes": 70,
+      "bytes": 42,
       "imports": [
         {
-          "path": "node_modules/@angular/material/prebuilt-themes/rose-red.css",
+          "path": "src/custom-themes/rose-red.scss",
           "kind": "import-rule",
-          "original": "node_modules/@angular/material/prebuilt-themes/rose-red.css"
+          "original": "src/custom-themes/rose-red.scss"
         }
       ]
     }
@@ -8592,7 +8536,7 @@
       "imports": [],
       "entryPoint": "angular:styles/global:azure-blue",
       "inputs": {
-        "node_modules/@angular/material/prebuilt-themes/azure-blue.css": {
+        "src/custom-themes/azure-blue.scss": {
           "bytesInOutput": 6897
         },
         "angular:styles/global:azure-blue": {
@@ -8605,85 +8549,33 @@
       "imports": [],
       "entryPoint": "angular:styles/global:cyan-orange",
       "inputs": {
-        "node_modules/@angular/material/prebuilt-themes/cyan-orange.css": {
-          "bytesInOutput": 6897
+        "src/custom-themes/cyan-orange.scss": {
+          "bytesInOutput": 8044
         },
         "angular:styles/global:cyan-orange": {
           "bytesInOutput": 0
         }
       },
-      "bytes": 6898
-    },
-    "deeppurple-amber.css": {
-      "imports": [],
-      "entryPoint": "angular:styles/global:deeppurple-amber",
-      "inputs": {
-        "node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css": {
-          "bytesInOutput": 88695
-        },
-        "angular:styles/global:deeppurple-amber": {
-          "bytesInOutput": 0
-        }
-      },
-      "bytes": 88696
-    },
-    "indigo-pink.css": {
-      "imports": [],
-      "entryPoint": "angular:styles/global:indigo-pink",
-      "inputs": {
-        "node_modules/@angular/material/prebuilt-themes/indigo-pink.css": {
-          "bytesInOutput": 88445
-        },
-        "angular:styles/global:indigo-pink": {
-          "bytesInOutput": 0
-        }
-      },
-      "bytes": 88446
+      "bytes": 8045
     },
     "magenta-violet.css": {
       "imports": [],
       "entryPoint": "angular:styles/global:magenta-violet",
       "inputs": {
-        "node_modules/@angular/material/prebuilt-themes/magenta-violet.css": {
-          "bytesInOutput": 6897
+        "src/custom-themes/magenta-violet.scss": {
+          "bytesInOutput": 8044
         },
         "angular:styles/global:magenta-violet": {
           "bytesInOutput": 0
         }
       },
-      "bytes": 6898
-    },
-    "pink-bluegrey.css": {
-      "imports": [],
-      "entryPoint": "angular:styles/global:pink-bluegrey",
-      "inputs": {
-        "node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css": {
-          "bytesInOutput": 89332
-        },
-        "angular:styles/global:pink-bluegrey": {
-          "bytesInOutput": 0
-        }
-      },
-      "bytes": 89333
-    },
-    "purple-green.css": {
-      "imports": [],
-      "entryPoint": "angular:styles/global:purple-green",
-      "inputs": {
-        "node_modules/@angular/material/prebuilt-themes/purple-green.css": {
-          "bytesInOutput": 89346
-        },
-        "angular:styles/global:purple-green": {
-          "bytesInOutput": 0
-        }
-      },
-      "bytes": 89347
+      "bytes": 8045
     },
     "rose-red.css": {
       "imports": [],
       "entryPoint": "angular:styles/global:rose-red",
       "inputs": {
-        "node_modules/@angular/material/prebuilt-themes/rose-red.css": {
+        "src/custom-themes/rose-red.scss": {
           "bytesInOutput": 6897
         },
         "angular:styles/global:rose-red": {
