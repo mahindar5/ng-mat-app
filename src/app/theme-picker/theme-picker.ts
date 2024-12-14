@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { StyleManager } from '../style-manager';
+import { StyleManager } from '../style-manager/style-manager';
 import { DocsSiteTheme, ThemeStorage } from './theme-storage/theme-storage';
 
 @Component({
