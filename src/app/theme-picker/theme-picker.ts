@@ -1,4 +1,3 @@
-import { LiveAnnouncer } from '@angular/cdk/a11y';
 import {
 	ChangeDetectionStrategy,
 	Component,
@@ -10,9 +9,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { StyleManager } from '../style-manager';
 import { DocsSiteTheme, ThemeStorage } from './theme-storage/theme-storage';
 
@@ -26,7 +22,6 @@ import { DocsSiteTheme, ThemeStorage } from './theme-storage/theme-storage';
 	imports: [MatButtonModule, MatTooltipModule, MatMenuModule, MatIconModule]
 })
 export class ThemePicker implements OnInit, OnDestroy {
-	private _queryParamSubscription = Subscription.EMPTY;
 	currentTheme: DocsSiteTheme | undefined;
 
 	// The below colors need to align with the themes defined in theme-picker.scss
@@ -59,9 +54,7 @@ export class ThemePicker implements OnInit, OnDestroy {
 	];
 
 	constructor(public styleManager: StyleManager,
-		private _themeStorage: ThemeStorage,
-		private _activatedRoute: ActivatedRoute,
-		private liveAnnouncer: LiveAnnouncer) {
+		private _themeStorage: ThemeStorage) {
 		const themeName = this._themeStorage.getStoredThemeName();
 		if (themeName) {
 			this.selectTheme(themeName);
@@ -75,17 +68,9 @@ export class ThemePicker implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this._queryParamSubscription = this._activatedRoute.queryParamMap
-			.pipe(map((params: ParamMap) => params.get('theme')))
-			.subscribe((themeName: string | null) => {
-				if (themeName) {
-					this.selectTheme(themeName);
-				}
-			});
 	}
 
 	ngOnDestroy() {
-		this._queryParamSubscription.unsubscribe();
 	}
 
 	selectTheme(themeName: string) {
@@ -101,7 +86,6 @@ export class ThemePicker implements OnInit, OnDestroy {
 		}
 
 		if (this.currentTheme) {
-			this.liveAnnouncer.announce(`${theme.displayName} theme selected.`, 'polite', 3000);
 			this._themeStorage.storeTheme(this.currentTheme);
 		}
 	}
