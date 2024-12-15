@@ -7460,12 +7460,12 @@
       ],
       "format": "esm"
     },
-    "src/app/ai-dashboard/ai-dashboard.component.scss": {
-      "bytes": 0,
-      "imports": []
-    },
     "src/app/theme-picker/theme-picker.scss": {
       "bytes": 413,
+      "imports": []
+    },
+    "src/app/ai-dashboard/ai-dashboard.component.scss": {
+      "bytes": 0,
       "imports": []
     },
     "src/app/app.component.scss": {
@@ -8493,16 +8493,6 @@
       },
       "bytes": 150525
     },
-    "ai-dashboard.component-JX6V7RHU.css": {
-      "imports": [],
-      "inputs": {
-        "src/app/ai-dashboard/ai-dashboard.component.scss": {
-          "bytesInOutput": 0
-        }
-      },
-      "bytes": 0,
-      "ng-component": true
-    },
     "theme-picker-42VWRI6L.css": {
       "imports": [],
       "inputs": {
@@ -8511,6 +8501,16 @@
         }
       },
       "bytes": 364,
+      "ng-component": true
+    },
+    "ai-dashboard.component-JX6V7RHU.css": {
+      "imports": [],
+      "inputs": {
+        "src/app/ai-dashboard/ai-dashboard.component.scss": {
+          "bytesInOutput": 0
+        }
+      },
+      "bytes": 0,
       "ng-component": true
     },
     "app.component-WYSVVPMJ.css": {
