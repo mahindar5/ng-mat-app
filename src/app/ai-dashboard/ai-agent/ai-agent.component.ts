@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { ThemePicker } from "../../theme-picker/theme-picker";
+import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
 	selector: 'app-ai-agent',
-	imports: [ThemePicker],
+	imports: [MatTabsModule],
 	templateUrl: './ai-agent.component.html',
 	styleUrl: './ai-agent.component.scss'
 })

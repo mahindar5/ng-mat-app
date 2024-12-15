@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-	{ path: '', redirectTo: 'ai-dashboard', pathMatch: 'full' },
+	{ path: '', redirectTo: 'ai-dashboard/ai-agent', pathMatch: 'full' },
 	{
 		path: 'ai-dashboard',
 		loadComponent: () => import('./ai-dashboard/ai-dashboard.component').then(m => m.AiDashboardComponent),

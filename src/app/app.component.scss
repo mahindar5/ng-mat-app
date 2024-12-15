@@ -1,6 +1,13 @@
+@use '@angular/material' as mat;
+
 .container {
 	display: flex;
 	flex-direction: column;
 	overflow: auto;
 	height: 100%;
+}
+
+mat-toolbar {
+	color-scheme: dark;
+	@include mat.theme((color: mat.$magenta-palette));
 }

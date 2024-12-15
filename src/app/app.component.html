@@ -1,60 +1,58 @@
-<main class="{{currentTheme}}">
-	<mat-toolbar color="primary">
-		<button mat-icon-button (click)="snav.toggle()">
-			<mat-icon>menu</mat-icon>
-		</button>
+<mat-toolbar color="primary">
+	<button mat-icon-button (click)="snav.toggle()">
+		<mat-icon>menu</mat-icon>
+	</button>
 
-		<theme-picker> </theme-picker>
-	</mat-toolbar>
+	<theme-picker> </theme-picker>
+</mat-toolbar>
 
-	<mat-sidenav-container>
-		<mat-sidenav #snav [mode]="'side'" fixedTopGap="56">
-			<mat-nav-list>
-				@for (item of menu; track item) {
+<mat-sidenav-container>
+	<mat-sidenav #snav [mode]="'side'" fixedTopGap="56">
+		<mat-nav-list>
+			@for (item of menu; track item) {
+			<span>
+				@if (item.children && item.children.length > 0) {
 				<span>
-					@if (item.children && item.children.length > 0) {
-					<span>
-						<mat-accordion>
-							<mat-expansion-panel>
-								<mat-expansion-panel-header>
-									<mat-panel-title>
-										<div>
-											<mat-icon>{{item.iconName}}</mat-icon>
-											{{item.displayName}}
-										</div>
-									</mat-panel-title>
-								</mat-expansion-panel-header>
-								@for (child of item.children; track child) {
-								<span>
-									<mat-list-item [routerLink]="child.route">
-										<div>
-											<mat-icon>{{child.iconName}}</mat-icon>
-											{{child.displayName}}
-										</div>
-									</mat-list-item>
-								</span>
-								}
-							</mat-expansion-panel>
-						</mat-accordion>
-					</span>
-					}
-					@if (!item.children || item.children.length === 0) {
-					<span>
-						<mat-list-item [routerLink]="item.route">
-							<div fxLayout="row" fxLayoutAlign="space-between center">
-								<!-- <mat-icon>{{item.iconName}}</mat-icon> -->
-								{{item.displayName}}
-							</div>
-						</mat-list-item>
-					</span>
-					}
+					<mat-accordion>
+						<mat-expansion-panel>
+							<mat-expansion-panel-header>
+								<mat-panel-title>
+									<div>
+										<mat-icon>{{item.iconName}}</mat-icon>
+										{{item.displayName}}
+									</div>
+								</mat-panel-title>
+							</mat-expansion-panel-header>
+							@for (child of item.children; track child) {
+							<span>
+								<mat-list-item [routerLink]="child.route">
+									<div>
+										<mat-icon>{{child.iconName}}</mat-icon>
+										{{child.displayName}}
+									</div>
+								</mat-list-item>
+							</span>
+							}
+						</mat-expansion-panel>
+					</mat-accordion>
 				</span>
 				}
-			</mat-nav-list>
-		</mat-sidenav>
+				@if (!item.children || item.children.length === 0) {
+				<span>
+					<mat-list-item [routerLink]="item.route">
+						<div fxLayout="row" fxLayoutAlign="space-between center">
+							<!-- <mat-icon>{{item.iconName}}</mat-icon> -->
+							{{item.displayName}}
+						</div>
+					</mat-list-item>
+				</span>
+				}
+			</span>
+			}
+		</mat-nav-list>
+	</mat-sidenav>
 
-		<mat-sidenav-content>
-			<router-outlet></router-outlet>
-		</mat-sidenav-content>
-	</mat-sidenav-container>
-</main>
+	<mat-sidenav-content>
+		<router-outlet></router-outlet>
+	</mat-sidenav-content>
+</mat-sidenav-container>
