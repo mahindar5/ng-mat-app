@@ -1,0 +1,61 @@
+npm install -g @angular/cli@latest
+
+ng new ng-mat-app --routing --experimental-zoneless
+√ Which stylesheet format would you like to use? Sass (SCSS)     [ https://sass-lang.com/documentation/syntax#scss]
+√ Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? No
+
+ng add @angular/material
+√ Choose a prebuilt theme name, or "custom" for a custom theme: Magenta/Violet     [Preview: https://material.angular.io?theme=magenta-violet]
+√ Set up global Angular Material typography styles? yes
+√ Include the Angular animations module? Include and enable animations
+
+add below to angular.json styles list
+
+  "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+  "node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+  "node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+  "node_modules/@angular/material/prebuilt-themes/purple-green.css"
+
+npm uninstall zone.js
+
+generate pat token and update global npmrc
+@mahindar5:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=
+npm install @mahindar5/common-lib@latest
+
+add new repo to common lib https://github.com/users/mahindar5/packages/npm/common-lib/settings
+
+create repo in git site
+git init
+git config user.name "mahindar5"
+git config user.email "mahindar.275@gmail.com"
+
+git remote add origin https://github.com/mahindar5/ng-mat-app.git
+git branch -M main
+git push -u origin main
+
+md ".github/workflows"
+
+
+ng generate component ai-dashboard
+ng generate component ai-dashboard/ai-agent
+ng generate component ai-dashboard/ai-chat
+ng generate component ai-dashboard/settings
+
+copy .vscode/settings
+
+ng add @angular/pwa
+
+add port
+
+          "builder": "@angular-devkit/build-angular:dev-server",
+		  "options": {
+			  "port": 4301
+		  },
+            "inlineStyleLanguage": "scss",
+            "statsJson": true,
+
+ng generate @angular/core:control-flow --format false  --path /       
+
+change source to github actions to enable github pahges
+https://github.com/mahindar5/ng-mat-app/settings/pages
