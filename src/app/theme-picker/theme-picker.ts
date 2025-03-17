@@ -1,18 +1,32 @@
+import { CommonModule } from '@angular/common';
 import {
 	ChangeDetectionStrategy,
 	Component,
 	OnDestroy,
 	OnInit,
-	ViewEncapsulation,
+	ViewEncapsulation
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { StyleManager } from '../style-manager/style-manager';
 import { DocsSiteTheme, ThemeStorage } from './theme-storage/theme-storage';
+
+interface ColorScheme {
+	colorDark: string;
+	backgroundDark: string;
+	color: string;
+	background: string;
+}
+
+interface ColorCombinations {
+	[key: string]: ColorScheme;
+}
 
 @Component({
 	selector: 'theme-picker',
@@ -22,20 +36,26 @@ import { DocsSiteTheme, ThemeStorage } from './theme-storage/theme-storage';
 	encapsulation: ViewEncapsulation.None,
 	standalone: true,
 	imports: [
+		CommonModule,
 		MatButtonModule,
 		MatTooltipModule,
 		MatMenuModule,
 		MatIconModule,
 		MatSlideToggleModule,
+		MatFormFieldModule,
+		MatSelectModule,
 		FormsModule
 	]
 })
 export class ThemePicker implements OnInit, OnDestroy {
 	currentTheme: DocsSiteTheme | undefined;
 	isDarkMode = false;
-	//color:--mat-sys-primary-container
-	//background:--mat-sys-on-surface
-	colorCombinations = {
+	selectedPrimaryColor: string = '';
+	selectedTertiaryColor: string = '';
+	availableColors: string[] = [];
+
+	// Keep colorCombinations public as it's referenced in the HTML template
+	colorCombinations: ColorCombinations = {
 		"red": {
 			"colorDark": "#930100",
 			"backgroundDark": "#201a19",
@@ -109,29 +129,50 @@ export class ThemePicker implements OnInit, OnDestroy {
 			"background": "#fffbff"
 		}
 	};
-	themes: DocsSiteTheme[] = this.generateColorCombinations(this.colorCombinations);
+	themes: DocsSiteTheme[];
 
 	constructor(
 		public styleManager: StyleManager,
 		private _themeStorage: ThemeStorage
 	) {
-		this.isDarkMode = this._themeStorage.getStoredDarkMode();
-		const themeName = this._themeStorage.getStoredThemeName();
-		if (themeName) {
-			this.selectTheme(themeName);
+		this.availableColors = Object.keys(this.colorCombinations);
+		this.themes = this.generateColorCombinations(this.colorCombinations);
+		this.initializeTheme();
+	}
+
+	private initializeTheme(): void {
+		const storedData = this._themeStorage.getStoredThemeData();
+
+		if (storedData) {
+			this.isDarkMode = storedData.isDark;
+			const [primary, tertiary] = storedData.themeName.split('-');
+			this.selectedPrimaryColor = primary;
+			this.selectedTertiaryColor = tertiary;
+			this.selectTheme(storedData.themeName);
 		} else {
-			this.themes.find(themes => {
-				if (themes.isDefault === true) {
-					this.selectTheme(themes.name);
-				}
-			});
+			// Set default colors
+			this.selectedPrimaryColor = this.availableColors[0];
+			this.selectedTertiaryColor = this.availableColors[1];
+			this.selectTheme(`${this.selectedPrimaryColor}-${this.selectedTertiaryColor}`);
 		}
 	}
 
-	generateColorCombinations(inputColors: any) {
-		const output = [];
+	// Must keep these methods as they are referenced in the HTML template
+	onPrimaryColorChange() {
+		if (this.selectedPrimaryColor && this.selectedTertiaryColor) {
+			this.selectTheme(`${this.selectedPrimaryColor}-${this.selectedTertiaryColor}`);
+		}
+	}
+
+	onTertiaryColorChange() {
+		if (this.selectedPrimaryColor && this.selectedTertiaryColor) {
+			this.selectTheme(`${this.selectedPrimaryColor}-${this.selectedTertiaryColor}`);
+		}
+	}
+
+	generateColorCombinations(inputColors: ColorCombinations): DocsSiteTheme[] {
+		const output: DocsSiteTheme[] = [];
 		const colorNames = Object.keys(inputColors);
-		const angularOutput = [];
 
 		for (let i = 0; i < colorNames.length; i++) {
 			for (let j = 0; j < colorNames.length; j++) {
@@ -139,56 +180,48 @@ export class ThemePicker implements OnInit, OnDestroy {
 				const accent = colorNames[j];
 
 				const primaryData = inputColors[primary];
-				const accentData = inputColors[accent];  // Use accent color data
+
 				if (primary === accent) {
 					continue;
 				}
 
-				const combination = {
-					color: primaryData.color,         // Use primary color
-					background: primaryData.background,  // Use primary background
-					colorDark: primaryData.colorDark,     // Use primary colorDark
-					backgroundDark: primaryData.backgroundDark, // Use primary backgroundDark
+				const combination: DocsSiteTheme = {
+					color: primaryData.color,
+					background: primaryData.background,
+					colorDark: primaryData.colorDark,
+					backgroundDark: primaryData.backgroundDark,
 					displayName: `${this.capitalizeFirstLetter(primary)} & ${this.capitalizeFirstLetter(accent)}`,
-					name: `${primary}-${accent}`,  // primary-accent format
+					name: `${primary}-${accent}`,
 					primary: primary,
 					accent: accent,
 				};
 				output.push(combination);
-				angularOutput.push({
-					bundleName: `${primary}-${accent}-dark`,
-					inject: false,
-					input: `src/custom-themes/${primary}-${accent}-dark.scss`,
-				});
-				angularOutput.push({
-					bundleName: `${primary}-${accent}`,
-					inject: false,
-					input: `src/custom-themes/${primary}-${accent}.scss`,
-				});
 			}
 		}
-		console.log(angularOutput.sort((a, b) => a.bundleName.localeCompare(b.bundleName)));
-		return output.sort((a, b) => a.displayName.localeCompare(b.displayName));
 
+		// Fix the TypeScript error by using non-null assertions or providing fallback values
+		return output.sort((a, b) => (a.displayName || '').localeCompare(b.displayName || ''));
 	}
-	capitalizeFirstLetter(str: string) {
+
+	// Must keep this method as it's referenced in the HTML template
+	capitalizeFirstLetter(str: string): string {
 		return str.charAt(0).toUpperCase() + str.slice(1);
 	}
 
 	ngOnInit() {
-		// this._themeStorage.onDarkModeUpdate.subscribe((isDark: boolean) => {
-		// 	this.isDarkMode = isDark;
-		// 	this.updateTheme();
-		// });
+		// Empty implementation to satisfy interface
 	}
 
 	ngOnDestroy() {
+		// Empty implementation to satisfy interface
 	}
 
+	// Must keep this method as it's referenced in the HTML template
 	toggleDarkMode() {
-		// this.isDarkMode = !this.isDarkMode;
-		this._themeStorage.storeDarkMode(this.isDarkMode);
 		this.updateTheme();
+		if (this.currentTheme) {
+			this._themeStorage.storeThemeData(this.currentTheme, this.isDarkMode);
+		}
 	}
 
 	selectTheme(themeName: string) {
@@ -199,7 +232,7 @@ export class ThemePicker implements OnInit, OnDestroy {
 		this.updateTheme();
 
 		if (this.currentTheme) {
-			this._themeStorage.storeTheme(this.currentTheme);
+			this._themeStorage.storeThemeData(this.currentTheme, this.isDarkMode);
 		}
 	}
 

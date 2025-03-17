@@ -12,51 +12,38 @@ export interface DocsSiteTheme {
 	accent?: string;
 }
 
+interface StoredThemeData {
+	themeName: string;
+	isDark: boolean;
+}
+
 @Injectable({ providedIn: 'root' })
 export class ThemeStorage {
-	static storageKey = 'docs-theme-storage-current-name';
-	static darkModeKey = 'docs-theme-storage-dark-mode';
+	static storageKey = 'docs-theme-storage-data';
 
-	// onThemeUpdate: EventEmitter<DocsSiteTheme> = new EventEmitter<DocsSiteTheme>();
-	// onDarkModeUpdate: EventEmitter<boolean> = new EventEmitter<boolean>();
-
-	storeTheme(theme: DocsSiteTheme) {
+	storeThemeData(theme: DocsSiteTheme, isDark: boolean) {
 		try {
-			window.localStorage[ThemeStorage.storageKey] = theme.name;
+			const data: StoredThemeData = {
+				themeName: theme.name,
+				isDark: isDark
+			};
+			window.localStorage[ThemeStorage.storageKey] = JSON.stringify(data);
 		} catch { }
-
-		// this.onThemeUpdate.emit(theme);
 	}
 
-	getStoredThemeName(): string | null {
+	getStoredThemeData(): StoredThemeData | null {
 		try {
-			return window.localStorage[ThemeStorage.storageKey] || null;
-		} catch {
-			return null;
-		}
-	}
-
-	storeDarkMode(isDark: boolean) {
-		try {
-			window.localStorage[ThemeStorage.darkModeKey] = JSON.stringify(isDark);
+			const stored = window.localStorage[ThemeStorage.storageKey];
+			if (stored) {
+				return JSON.parse(stored);
+			}
 		} catch { }
-
-		// this.onDarkModeUpdate.emit(isDark);
-	}
-
-	getStoredDarkMode(): boolean {
-		try {
-			const stored = window.localStorage[ThemeStorage.darkModeKey];
-			return stored ? JSON.parse(stored) : false;
-		} catch {
-			return false;
-		}
+		return null;
 	}
 
 	clearStorage() {
 		try {
 			window.localStorage.removeItem(ThemeStorage.storageKey);
-			window.localStorage.removeItem(ThemeStorage.darkModeKey);
 		} catch { }
 	}
 }
