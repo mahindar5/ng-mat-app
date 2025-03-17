@@ -5,9 +5,11 @@ import {
 	OnInit,
 	ViewEncapsulation,
 } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { StyleManager } from '../style-manager/style-manager';
 import { DocsSiteTheme, ThemeStorage } from './theme-storage/theme-storage';
@@ -19,42 +21,60 @@ import { DocsSiteTheme, ThemeStorage } from './theme-storage/theme-storage';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	encapsulation: ViewEncapsulation.None,
 	standalone: true,
-	imports: [MatButtonModule, MatTooltipModule, MatMenuModule, MatIconModule]
+	imports: [
+		MatButtonModule,
+		MatTooltipModule,
+		MatMenuModule,
+		MatIconModule,
+		MatSlideToggleModule,
+		FormsModule
+	]
 })
 export class ThemePicker implements OnInit, OnDestroy {
 	currentTheme: DocsSiteTheme | undefined;
-
-	// The below colors need to align with the themes defined in theme-picker.scss
+	isDarkMode = false;
+	//color:--mat-sys-primary-container
+	//background:--mat-sys-on-surface
 	themes: DocsSiteTheme[] = [
 		{
 			color: '#ffd9e1',
+			background: '#fffbff',
+			colorDark: '#8f0045',
+			backgroundDark: '#201a1b',
 			displayName: 'Rose & Red',
 			name: 'rose-red',
-			background: '#fffbff',
 		},
 		{
 			color: '#d7e3ff',
+			background: '#fdfbff',
+			colorDark: '#00458f',
+			backgroundDark: '#1a1b1f',
 			displayName: 'Azure & Blue',
 			name: 'azure-blue',
-			background: '#fdfbff',
-			isDefault: true,
 		},
 		{
-			color: '#810081',
+			color: '#ffd7f5',
+			background: '#fff9ff',
 			displayName: 'Magenta & Violet',
 			name: 'magenta-violet',
-			background: '#1e1a1d',
+			colorDark: '#810081',
+			backgroundDark: '#1e1a1d',
 		},
 		{
-			color: '#004f4f',
+			color: '#00fbfb',
+			background: '#f9ffff',
 			displayName: 'Cyan & Orange',
 			name: 'cyan-orange',
-			background: '#191c1c',
+			colorDark: '#004f4f',
+			backgroundDark: '#191c1c',
 		},
 	];
 
-	constructor(public styleManager: StyleManager,
-		private _themeStorage: ThemeStorage) {
+	constructor(
+		public styleManager: StyleManager,
+		private _themeStorage: ThemeStorage
+	) {
+		this.isDarkMode = this._themeStorage.getStoredDarkMode();
 		const themeName = this._themeStorage.getStoredThemeName();
 		if (themeName) {
 			this.selectTheme(themeName);
@@ -68,9 +88,19 @@ export class ThemePicker implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		// this._themeStorage.onDarkModeUpdate.subscribe((isDark: boolean) => {
+		// 	this.isDarkMode = isDark;
+		// 	this.updateTheme();
+		// });
 	}
 
 	ngOnDestroy() {
+	}
+
+	toggleDarkMode() {
+		// this.isDarkMode = !this.isDarkMode;
+		this._themeStorage.storeDarkMode(this.isDarkMode);
+		this.updateTheme();
 	}
 
 	selectTheme(themeName: string) {
@@ -78,15 +108,20 @@ export class ThemePicker implements OnInit, OnDestroy {
 			this.themes.find(currentTheme => currentTheme.isDefault)!;
 
 		this.currentTheme = theme;
-
-		if (theme.isDefault) {
-			this.styleManager.removeStyle('theme');
-		} else {
-			this.styleManager.setStyle('theme', `${theme.name}.css`);
-		}
+		this.updateTheme();
 
 		if (this.currentTheme) {
 			this._themeStorage.storeTheme(this.currentTheme);
 		}
+	}
+
+	private updateTheme() {
+		if (!this.currentTheme) return;
+
+		const themeName = this.isDarkMode
+			? `${this.currentTheme.name}-dark`
+			: this.currentTheme.name;
+
+		this.styleManager.setStyle('theme', `${themeName}.css`);
 	}
 }
