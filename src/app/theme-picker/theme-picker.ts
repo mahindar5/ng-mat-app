@@ -35,40 +35,81 @@ export class ThemePicker implements OnInit, OnDestroy {
 	isDarkMode = false;
 	//color:--mat-sys-primary-container
 	//background:--mat-sys-on-surface
-	themes: DocsSiteTheme[] = [
-		{
-			color: '#ffd9e1',
-			background: '#fffbff',
-			colorDark: '#8f0045',
-			backgroundDark: '#201a1b',
-			displayName: 'Rose & Red',
-			name: 'rose-red',
+	colorCombinations = {
+		"red": {
+			"colorDark": "#930100",
+			"backgroundDark": "#201a19",
+			"color": "#ffdad4",
+			"background": "#fffbff"
 		},
-		{
-			color: '#d7e3ff',
-			background: '#fdfbff',
-			colorDark: '#00458f',
-			backgroundDark: '#1a1b1f',
-			displayName: 'Azure & Blue',
-			name: 'azure-blue',
+		"green": {
+			"colorDark": "#015300",
+			"backgroundDark": "#1a1c18",
+			"color": "#77ff61",
+			"background": "#fcfdf6"
 		},
-		{
-			color: '#ffd7f5',
-			background: '#fff9ff',
-			displayName: 'Magenta & Violet',
-			name: 'magenta-violet',
-			colorDark: '#810081',
-			backgroundDark: '#1e1a1d',
+		"blue": {
+			"colorDark": "#0000ef",
+			"backgroundDark": "#1b1b1f",
+			"color": "#e0e0ff",
+			"background": "#fffbff"
 		},
-		{
-			color: '#00fbfb',
-			background: '#f9ffff',
-			displayName: 'Cyan & Orange',
-			name: 'cyan-orange',
-			colorDark: '#004f4f',
-			backgroundDark: '#191c1c',
+		"yellow": {
+			"colorDark": "#494900",
+			"backgroundDark": "#1c1c17",
+			"color": "#eaea00",
+			"background": "#fffbff"
 		},
-	];
+		"cyan": {
+			"colorDark": "#004f4f",
+			"backgroundDark": "#191c1c",
+			"color": "#00fbfb",
+			"background": "#fafdfc"
+		},
+		"magenta": {
+			"colorDark": "#810081",
+			"backgroundDark": "#1e1a1d",
+			"color": "#ffd7f5",
+			"background": "#fffbff"
+		},
+		"orange": {
+			"colorDark": "#723600",
+			"backgroundDark": "#201a17",
+			"color": "#ffdcc7",
+			"background": "#fffbff"
+		},
+		"chartreuse": {
+			"colorDark": "#245100",
+			"backgroundDark": "#1a1c18",
+			"color": "#82ff10",
+			"background": "#fdfdf5"
+		},
+		"spring-green": {
+			"colorDark": "#005225",
+			"backgroundDark": "#191c19",
+			"color": "#63ff94",
+			"background": "#fcfdf7"
+		},
+		"azure": {
+			"colorDark": "#00458f",
+			"backgroundDark": "#1a1b1f",
+			"color": "#d7e3ff",
+			"background": "#fdfbff"
+		},
+		"violet": {
+			"colorDark": "#5f00c0",
+			"backgroundDark": "#1d1b1e",
+			"color": "#ecdcff",
+			"background": "#fffbff"
+		},
+		"rose": {
+			"colorDark": "#8f0045",
+			"backgroundDark": "#201a1b",
+			"color": "#ffd9e1",
+			"background": "#fffbff"
+		}
+	};
+	themes: DocsSiteTheme[] = this.generateColorCombinations(this.colorCombinations);
 
 	constructor(
 		public styleManager: StyleManager,
@@ -85,6 +126,53 @@ export class ThemePicker implements OnInit, OnDestroy {
 				}
 			});
 		}
+	}
+
+	generateColorCombinations(inputColors: any) {
+		const output = [];
+		const colorNames = Object.keys(inputColors);
+		const angularOutput = [];
+
+		for (let i = 0; i < colorNames.length; i++) {
+			for (let j = 0; j < colorNames.length; j++) {
+				const primary = colorNames[i];
+				const accent = colorNames[j];
+
+				const primaryData = inputColors[primary];
+				const accentData = inputColors[accent];  // Use accent color data
+				if (primary === accent) {
+					continue;
+				}
+
+				const combination = {
+					color: primaryData.color,         // Use primary color
+					background: primaryData.background,  // Use primary background
+					colorDark: primaryData.colorDark,     // Use primary colorDark
+					backgroundDark: primaryData.backgroundDark, // Use primary backgroundDark
+					displayName: `${this.capitalizeFirstLetter(primary)} & ${this.capitalizeFirstLetter(accent)}`,
+					name: `${primary}-${accent}`,  // primary-accent format
+					primary: primary,
+					accent: accent,
+				};
+				output.push(combination);
+				angularOutput.push({
+					bundleName: `${primary}-${accent}-dark`,
+					inject: false,
+					input: `src/custom-themes/${primary}-${accent}-dark.scss`,
+				});
+				angularOutput.push({
+					bundleName: `${primary}-${accent}`,
+					inject: false,
+					input: `src/custom-themes/${primary}-${accent}.scss`,
+				});
+			}
+		}
+		console.log(angularOutput.sort((a, b) => a.bundleName.localeCompare(b.bundleName)));
+		return output.sort((a, b) => a.displayName.localeCompare(b.displayName));
+
+	}
+	capitalizeFirstLetter(str: string) {
+		return str.charAt(0).toUpperCase() + str.slice(1);
 	}
 
 	ngOnInit() {

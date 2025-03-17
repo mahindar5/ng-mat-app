@@ -1,145 +1,1425 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "newProjectRoot": "projects",
-  "projects": {
-    "ng-mat-app": {
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:application",
-          "configurations": {
-            "development": {
-              "extractLicenses": false,
-              "optimization": false,
-              "sourceMap": true
-            },
-            "production": {
-              "budgets": [
-                {
-                  "maximumError": "1MB",
-                  "maximumWarning": "500kB",
-                  "type": "initial"
-                },
-                {
-                  "maximumError": "8kB",
-                  "maximumWarning": "4kB",
-                  "type": "anyComponentStyle"
-                }
-              ],
-              "outputHashing": "all",
-              "serviceWorker": "ngsw-config.json"
-            }
-          },
-          "defaultConfiguration": "production",
-          "options": {
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "browser": "src/main.ts",
-            "index": "src/index.html",
-            "inlineStyleLanguage": "scss",
-            "outputPath": "dist/ng-mat-app",
-            "polyfills": [],
-            "scripts": [],
-            "statsJson": true,
-            "styles": [
-			  {
-				"bundleName": "azure-blue-dark",
-				"inject": false,
-				"input": "src/custom-themes/azure-blue-dark.scss"
-			  },
-              {
-                "bundleName": "azure-blue",
-                "inject": false,
-                "input": "src/custom-themes/azure-blue.scss"
-              },
-			  {
-				"bundleName": "cyan-orange-dark",
-				"inject": false,
-				"input": "src/custom-themes/cyan-orange-dark.scss"
-			  },
-              {
-                "bundleName": "cyan-orange",
-                "inject": false,
-                "input": "src/custom-themes/cyan-orange.scss"
-              },
-			  {
-				"bundleName": "magenta-violet-dark",
-				"inject": false,
-				"input": "src/custom-themes/magenta-violet-dark.scss"
-			  },
-              {
-                "bundleName": "magenta-violet",
-                "inject": false,
-                "input": "src/custom-themes/magenta-violet.scss"
-              },
-			  { 
-				"bundleName": "rose-red-dark",
-				"inject": false,
-				"input": "src/custom-themes/rose-red-dark.scss"
-			  },
-              {
-                "bundleName": "rose-red",
-                "inject": false,
-                "input": "src/custom-themes/rose-red.scss"
-              },
-              {
-                "input": "src/styles.scss"
-              }
-            ],
-            "tsConfig": "tsconfig.app.json"
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "development": {
-              "buildTarget": "ng-mat-app:build:development"
-            },
-            "production": {
-              "buildTarget": "ng-mat-app:build:production"
-            }
-          },
-          "defaultConfiguration": "development",
-          "options": {
-            "port": 4301
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "inlineStyleLanguage": "scss",
-            "polyfills": [],
-            "scripts": [],
-            "styles": [
-              "@angular/material/prebuilt-themes/magenta-violet.scss",
-              "src/styles.scss"
-            ],
-            "tsConfig": "tsconfig.spec.json"
-          }
-        }
-      },
-      "prefix": "app",
-      "projectType": "application",
-      "root": "",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "sourceRoot": "src"
-    }
-  },
-  "version": 1
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"newProjectRoot": "projects",
+	"projects": {
+		"ng-mat-app": {
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:application",
+					"configurations": {
+						"development": {
+							"extractLicenses": false,
+							"optimization": false,
+							"sourceMap": true
+						},
+						"production": {
+							"budgets": [
+								{
+									"maximumError": "1MB",
+									"maximumWarning": "500kB",
+									"type": "initial"
+								},
+								{
+									"maximumError": "8kB",
+									"maximumWarning": "4kB",
+									"type": "anyComponentStyle"
+								}
+							],
+							"outputHashing": "all",
+							"serviceWorker": "ngsw-config.json"
+						}
+					},
+					"defaultConfiguration": "production",
+					"options": {
+						"assets": [
+							{
+								"glob": "**/*",
+								"input": "public"
+							}
+						],
+						"browser": "src/main.ts",
+						"index": "src/index.html",
+						"inlineStyleLanguage": "scss",
+						"outputPath": "dist/ng-mat-app",
+						"polyfills": [],
+						"scripts": [],
+						"statsJson": true,
+						"styles": [
+							{
+								"bundleName": "azure-blue",
+								"inject": false,
+								"input": "src/custom-themes/azure-blue.scss"
+							},
+							{
+								"bundleName": "azure-blue-dark",
+								"inject": false,
+								"input": "src/custom-themes/azure-blue-dark.scss"
+							},
+							{
+								"bundleName": "azure-chartreuse",
+								"inject": false,
+								"input": "src/custom-themes/azure-chartreuse.scss"
+							},
+							{
+								"bundleName": "azure-chartreuse-dark",
+								"inject": false,
+								"input": "src/custom-themes/azure-chartreuse-dark.scss"
+							},
+							{
+								"bundleName": "azure-cyan",
+								"inject": false,
+								"input": "src/custom-themes/azure-cyan.scss"
+							},
+							{
+								"bundleName": "azure-cyan-dark",
+								"inject": false,
+								"input": "src/custom-themes/azure-cyan-dark.scss"
+							},
+							{
+								"bundleName": "azure-green",
+								"inject": false,
+								"input": "src/custom-themes/azure-green.scss"
+							},
+							{
+								"bundleName": "azure-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/azure-green-dark.scss"
+							},
+							{
+								"bundleName": "azure-magenta",
+								"inject": false,
+								"input": "src/custom-themes/azure-magenta.scss"
+							},
+							{
+								"bundleName": "azure-magenta-dark",
+								"inject": false,
+								"input": "src/custom-themes/azure-magenta-dark.scss"
+							},
+							{
+								"bundleName": "azure-orange",
+								"inject": false,
+								"input": "src/custom-themes/azure-orange.scss"
+							},
+							{
+								"bundleName": "azure-orange-dark",
+								"inject": false,
+								"input": "src/custom-themes/azure-orange-dark.scss"
+							},
+							{
+								"bundleName": "azure-red",
+								"inject": false,
+								"input": "src/custom-themes/azure-red.scss"
+							},
+							{
+								"bundleName": "azure-red-dark",
+								"inject": false,
+								"input": "src/custom-themes/azure-red-dark.scss"
+							},
+							{
+								"bundleName": "azure-rose",
+								"inject": false,
+								"input": "src/custom-themes/azure-rose.scss"
+							},
+							{
+								"bundleName": "azure-rose-dark",
+								"inject": false,
+								"input": "src/custom-themes/azure-rose-dark.scss"
+							},
+							{
+								"bundleName": "azure-spring-green",
+								"inject": false,
+								"input": "src/custom-themes/azure-spring-green.scss"
+							},
+							{
+								"bundleName": "azure-spring-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/azure-spring-green-dark.scss"
+							},
+							{
+								"bundleName": "azure-violet",
+								"inject": false,
+								"input": "src/custom-themes/azure-violet.scss"
+							},
+							{
+								"bundleName": "azure-violet-dark",
+								"inject": false,
+								"input": "src/custom-themes/azure-violet-dark.scss"
+							},
+							{
+								"bundleName": "azure-yellow",
+								"inject": false,
+								"input": "src/custom-themes/azure-yellow.scss"
+							},
+							{
+								"bundleName": "azure-yellow-dark",
+								"inject": false,
+								"input": "src/custom-themes/azure-yellow-dark.scss"
+							},
+							{
+								"bundleName": "blue-azure",
+								"inject": false,
+								"input": "src/custom-themes/blue-azure.scss"
+							},
+							{
+								"bundleName": "blue-azure-dark",
+								"inject": false,
+								"input": "src/custom-themes/blue-azure-dark.scss"
+							},
+							{
+								"bundleName": "blue-chartreuse",
+								"inject": false,
+								"input": "src/custom-themes/blue-chartreuse.scss"
+							},
+							{
+								"bundleName": "blue-chartreuse-dark",
+								"inject": false,
+								"input": "src/custom-themes/blue-chartreuse-dark.scss"
+							},
+							{
+								"bundleName": "blue-cyan",
+								"inject": false,
+								"input": "src/custom-themes/blue-cyan.scss"
+							},
+							{
+								"bundleName": "blue-cyan-dark",
+								"inject": false,
+								"input": "src/custom-themes/blue-cyan-dark.scss"
+							},
+							{
+								"bundleName": "blue-green",
+								"inject": false,
+								"input": "src/custom-themes/blue-green.scss"
+							},
+							{
+								"bundleName": "blue-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/blue-green-dark.scss"
+							},
+							{
+								"bundleName": "blue-magenta",
+								"inject": false,
+								"input": "src/custom-themes/blue-magenta.scss"
+							},
+							{
+								"bundleName": "blue-magenta-dark",
+								"inject": false,
+								"input": "src/custom-themes/blue-magenta-dark.scss"
+							},
+							{
+								"bundleName": "blue-orange",
+								"inject": false,
+								"input": "src/custom-themes/blue-orange.scss"
+							},
+							{
+								"bundleName": "blue-orange-dark",
+								"inject": false,
+								"input": "src/custom-themes/blue-orange-dark.scss"
+							},
+							{
+								"bundleName": "blue-red",
+								"inject": false,
+								"input": "src/custom-themes/blue-red.scss"
+							},
+							{
+								"bundleName": "blue-red-dark",
+								"inject": false,
+								"input": "src/custom-themes/blue-red-dark.scss"
+							},
+							{
+								"bundleName": "blue-rose",
+								"inject": false,
+								"input": "src/custom-themes/blue-rose.scss"
+							},
+							{
+								"bundleName": "blue-rose-dark",
+								"inject": false,
+								"input": "src/custom-themes/blue-rose-dark.scss"
+							},
+							{
+								"bundleName": "blue-spring-green",
+								"inject": false,
+								"input": "src/custom-themes/blue-spring-green.scss"
+							},
+							{
+								"bundleName": "blue-spring-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/blue-spring-green-dark.scss"
+							},
+							{
+								"bundleName": "blue-violet",
+								"inject": false,
+								"input": "src/custom-themes/blue-violet.scss"
+							},
+							{
+								"bundleName": "blue-violet-dark",
+								"inject": false,
+								"input": "src/custom-themes/blue-violet-dark.scss"
+							},
+							{
+								"bundleName": "blue-yellow",
+								"inject": false,
+								"input": "src/custom-themes/blue-yellow.scss"
+							},
+							{
+								"bundleName": "blue-yellow-dark",
+								"inject": false,
+								"input": "src/custom-themes/blue-yellow-dark.scss"
+							},
+							{
+								"bundleName": "chartreuse-azure",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-azure.scss"
+							},
+							{
+								"bundleName": "chartreuse-azure-dark",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-azure-dark.scss"
+							},
+							{
+								"bundleName": "chartreuse-blue",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-blue.scss"
+							},
+							{
+								"bundleName": "chartreuse-blue-dark",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-blue-dark.scss"
+							},
+							{
+								"bundleName": "chartreuse-cyan",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-cyan.scss"
+							},
+							{
+								"bundleName": "chartreuse-cyan-dark",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-cyan-dark.scss"
+							},
+							{
+								"bundleName": "chartreuse-green",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-green.scss"
+							},
+							{
+								"bundleName": "chartreuse-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-green-dark.scss"
+							},
+							{
+								"bundleName": "chartreuse-magenta",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-magenta.scss"
+							},
+							{
+								"bundleName": "chartreuse-magenta-dark",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-magenta-dark.scss"
+							},
+							{
+								"bundleName": "chartreuse-orange",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-orange.scss"
+							},
+							{
+								"bundleName": "chartreuse-orange-dark",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-orange-dark.scss"
+							},
+							{
+								"bundleName": "chartreuse-red",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-red.scss"
+							},
+							{
+								"bundleName": "chartreuse-red-dark",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-red-dark.scss"
+							},
+							{
+								"bundleName": "chartreuse-rose",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-rose.scss"
+							},
+							{
+								"bundleName": "chartreuse-rose-dark",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-rose-dark.scss"
+							},
+							{
+								"bundleName": "chartreuse-spring-green",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-spring-green.scss"
+							},
+							{
+								"bundleName": "chartreuse-spring-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-spring-green-dark.scss"
+							},
+							{
+								"bundleName": "chartreuse-violet",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-violet.scss"
+							},
+							{
+								"bundleName": "chartreuse-violet-dark",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-violet-dark.scss"
+							},
+							{
+								"bundleName": "chartreuse-yellow",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-yellow.scss"
+							},
+							{
+								"bundleName": "chartreuse-yellow-dark",
+								"inject": false,
+								"input": "src/custom-themes/chartreuse-yellow-dark.scss"
+							},
+							{
+								"bundleName": "cyan-azure",
+								"inject": false,
+								"input": "src/custom-themes/cyan-azure.scss"
+							},
+							{
+								"bundleName": "cyan-azure-dark",
+								"inject": false,
+								"input": "src/custom-themes/cyan-azure-dark.scss"
+							},
+							{
+								"bundleName": "cyan-blue",
+								"inject": false,
+								"input": "src/custom-themes/cyan-blue.scss"
+							},
+							{
+								"bundleName": "cyan-blue-dark",
+								"inject": false,
+								"input": "src/custom-themes/cyan-blue-dark.scss"
+							},
+							{
+								"bundleName": "cyan-chartreuse",
+								"inject": false,
+								"input": "src/custom-themes/cyan-chartreuse.scss"
+							},
+							{
+								"bundleName": "cyan-chartreuse-dark",
+								"inject": false,
+								"input": "src/custom-themes/cyan-chartreuse-dark.scss"
+							},
+							{
+								"bundleName": "cyan-green",
+								"inject": false,
+								"input": "src/custom-themes/cyan-green.scss"
+							},
+							{
+								"bundleName": "cyan-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/cyan-green-dark.scss"
+							},
+							{
+								"bundleName": "cyan-magenta",
+								"inject": false,
+								"input": "src/custom-themes/cyan-magenta.scss"
+							},
+							{
+								"bundleName": "cyan-magenta-dark",
+								"inject": false,
+								"input": "src/custom-themes/cyan-magenta-dark.scss"
+							},
+							{
+								"bundleName": "cyan-orange",
+								"inject": false,
+								"input": "src/custom-themes/cyan-orange.scss"
+							},
+							{
+								"bundleName": "cyan-orange-dark",
+								"inject": false,
+								"input": "src/custom-themes/cyan-orange-dark.scss"
+							},
+							{
+								"bundleName": "cyan-red",
+								"inject": false,
+								"input": "src/custom-themes/cyan-red.scss"
+							},
+							{
+								"bundleName": "cyan-red-dark",
+								"inject": false,
+								"input": "src/custom-themes/cyan-red-dark.scss"
+							},
+							{
+								"bundleName": "cyan-rose",
+								"inject": false,
+								"input": "src/custom-themes/cyan-rose.scss"
+							},
+							{
+								"bundleName": "cyan-rose-dark",
+								"inject": false,
+								"input": "src/custom-themes/cyan-rose-dark.scss"
+							},
+							{
+								"bundleName": "cyan-spring-green",
+								"inject": false,
+								"input": "src/custom-themes/cyan-spring-green.scss"
+							},
+							{
+								"bundleName": "cyan-spring-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/cyan-spring-green-dark.scss"
+							},
+							{
+								"bundleName": "cyan-violet",
+								"inject": false,
+								"input": "src/custom-themes/cyan-violet.scss"
+							},
+							{
+								"bundleName": "cyan-violet-dark",
+								"inject": false,
+								"input": "src/custom-themes/cyan-violet-dark.scss"
+							},
+							{
+								"bundleName": "cyan-yellow",
+								"inject": false,
+								"input": "src/custom-themes/cyan-yellow.scss"
+							},
+							{
+								"bundleName": "cyan-yellow-dark",
+								"inject": false,
+								"input": "src/custom-themes/cyan-yellow-dark.scss"
+							},
+							{
+								"bundleName": "green-azure",
+								"inject": false,
+								"input": "src/custom-themes/green-azure.scss"
+							},
+							{
+								"bundleName": "green-azure-dark",
+								"inject": false,
+								"input": "src/custom-themes/green-azure-dark.scss"
+							},
+							{
+								"bundleName": "green-blue",
+								"inject": false,
+								"input": "src/custom-themes/green-blue.scss"
+							},
+							{
+								"bundleName": "green-blue-dark",
+								"inject": false,
+								"input": "src/custom-themes/green-blue-dark.scss"
+							},
+							{
+								"bundleName": "green-chartreuse",
+								"inject": false,
+								"input": "src/custom-themes/green-chartreuse.scss"
+							},
+							{
+								"bundleName": "green-chartreuse-dark",
+								"inject": false,
+								"input": "src/custom-themes/green-chartreuse-dark.scss"
+							},
+							{
+								"bundleName": "green-cyan",
+								"inject": false,
+								"input": "src/custom-themes/green-cyan.scss"
+							},
+							{
+								"bundleName": "green-cyan-dark",
+								"inject": false,
+								"input": "src/custom-themes/green-cyan-dark.scss"
+							},
+							{
+								"bundleName": "green-magenta",
+								"inject": false,
+								"input": "src/custom-themes/green-magenta.scss"
+							},
+							{
+								"bundleName": "green-magenta-dark",
+								"inject": false,
+								"input": "src/custom-themes/green-magenta-dark.scss"
+							},
+							{
+								"bundleName": "green-orange",
+								"inject": false,
+								"input": "src/custom-themes/green-orange.scss"
+							},
+							{
+								"bundleName": "green-orange-dark",
+								"inject": false,
+								"input": "src/custom-themes/green-orange-dark.scss"
+							},
+							{
+								"bundleName": "green-red",
+								"inject": false,
+								"input": "src/custom-themes/green-red.scss"
+							},
+							{
+								"bundleName": "green-red-dark",
+								"inject": false,
+								"input": "src/custom-themes/green-red-dark.scss"
+							},
+							{
+								"bundleName": "green-rose",
+								"inject": false,
+								"input": "src/custom-themes/green-rose.scss"
+							},
+							{
+								"bundleName": "green-rose-dark",
+								"inject": false,
+								"input": "src/custom-themes/green-rose-dark.scss"
+							},
+							{
+								"bundleName": "green-spring-green",
+								"inject": false,
+								"input": "src/custom-themes/green-spring-green.scss"
+							},
+							{
+								"bundleName": "green-spring-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/green-spring-green-dark.scss"
+							},
+							{
+								"bundleName": "green-violet",
+								"inject": false,
+								"input": "src/custom-themes/green-violet.scss"
+							},
+							{
+								"bundleName": "green-violet-dark",
+								"inject": false,
+								"input": "src/custom-themes/green-violet-dark.scss"
+							},
+							{
+								"bundleName": "green-yellow",
+								"inject": false,
+								"input": "src/custom-themes/green-yellow.scss"
+							},
+							{
+								"bundleName": "green-yellow-dark",
+								"inject": false,
+								"input": "src/custom-themes/green-yellow-dark.scss"
+							},
+							{
+								"bundleName": "magenta-azure",
+								"inject": false,
+								"input": "src/custom-themes/magenta-azure.scss"
+							},
+							{
+								"bundleName": "magenta-azure-dark",
+								"inject": false,
+								"input": "src/custom-themes/magenta-azure-dark.scss"
+							},
+							{
+								"bundleName": "magenta-blue",
+								"inject": false,
+								"input": "src/custom-themes/magenta-blue.scss"
+							},
+							{
+								"bundleName": "magenta-blue-dark",
+								"inject": false,
+								"input": "src/custom-themes/magenta-blue-dark.scss"
+							},
+							{
+								"bundleName": "magenta-chartreuse",
+								"inject": false,
+								"input": "src/custom-themes/magenta-chartreuse.scss"
+							},
+							{
+								"bundleName": "magenta-chartreuse-dark",
+								"inject": false,
+								"input": "src/custom-themes/magenta-chartreuse-dark.scss"
+							},
+							{
+								"bundleName": "magenta-cyan",
+								"inject": false,
+								"input": "src/custom-themes/magenta-cyan.scss"
+							},
+							{
+								"bundleName": "magenta-cyan-dark",
+								"inject": false,
+								"input": "src/custom-themes/magenta-cyan-dark.scss"
+							},
+							{
+								"bundleName": "magenta-green",
+								"inject": false,
+								"input": "src/custom-themes/magenta-green.scss"
+							},
+							{
+								"bundleName": "magenta-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/magenta-green-dark.scss"
+							},
+							{
+								"bundleName": "magenta-orange",
+								"inject": false,
+								"input": "src/custom-themes/magenta-orange.scss"
+							},
+							{
+								"bundleName": "magenta-orange-dark",
+								"inject": false,
+								"input": "src/custom-themes/magenta-orange-dark.scss"
+							},
+							{
+								"bundleName": "magenta-red",
+								"inject": false,
+								"input": "src/custom-themes/magenta-red.scss"
+							},
+							{
+								"bundleName": "magenta-red-dark",
+								"inject": false,
+								"input": "src/custom-themes/magenta-red-dark.scss"
+							},
+							{
+								"bundleName": "magenta-rose",
+								"inject": false,
+								"input": "src/custom-themes/magenta-rose.scss"
+							},
+							{
+								"bundleName": "magenta-rose-dark",
+								"inject": false,
+								"input": "src/custom-themes/magenta-rose-dark.scss"
+							},
+							{
+								"bundleName": "magenta-spring-green",
+								"inject": false,
+								"input": "src/custom-themes/magenta-spring-green.scss"
+							},
+							{
+								"bundleName": "magenta-spring-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/magenta-spring-green-dark.scss"
+							},
+							{
+								"bundleName": "magenta-violet",
+								"inject": false,
+								"input": "src/custom-themes/magenta-violet.scss"
+							},
+							{
+								"bundleName": "magenta-violet-dark",
+								"inject": false,
+								"input": "src/custom-themes/magenta-violet-dark.scss"
+							},
+							{
+								"bundleName": "magenta-yellow",
+								"inject": false,
+								"input": "src/custom-themes/magenta-yellow.scss"
+							},
+							{
+								"bundleName": "magenta-yellow-dark",
+								"inject": false,
+								"input": "src/custom-themes/magenta-yellow-dark.scss"
+							},
+							{
+								"bundleName": "orange-azure",
+								"inject": false,
+								"input": "src/custom-themes/orange-azure.scss"
+							},
+							{
+								"bundleName": "orange-azure-dark",
+								"inject": false,
+								"input": "src/custom-themes/orange-azure-dark.scss"
+							},
+							{
+								"bundleName": "orange-blue",
+								"inject": false,
+								"input": "src/custom-themes/orange-blue.scss"
+							},
+							{
+								"bundleName": "orange-blue-dark",
+								"inject": false,
+								"input": "src/custom-themes/orange-blue-dark.scss"
+							},
+							{
+								"bundleName": "orange-chartreuse",
+								"inject": false,
+								"input": "src/custom-themes/orange-chartreuse.scss"
+							},
+							{
+								"bundleName": "orange-chartreuse-dark",
+								"inject": false,
+								"input": "src/custom-themes/orange-chartreuse-dark.scss"
+							},
+							{
+								"bundleName": "orange-cyan",
+								"inject": false,
+								"input": "src/custom-themes/orange-cyan.scss"
+							},
+							{
+								"bundleName": "orange-cyan-dark",
+								"inject": false,
+								"input": "src/custom-themes/orange-cyan-dark.scss"
+							},
+							{
+								"bundleName": "orange-green",
+								"inject": false,
+								"input": "src/custom-themes/orange-green.scss"
+							},
+							{
+								"bundleName": "orange-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/orange-green-dark.scss"
+							},
+							{
+								"bundleName": "orange-magenta",
+								"inject": false,
+								"input": "src/custom-themes/orange-magenta.scss"
+							},
+							{
+								"bundleName": "orange-magenta-dark",
+								"inject": false,
+								"input": "src/custom-themes/orange-magenta-dark.scss"
+							},
+							{
+								"bundleName": "orange-red",
+								"inject": false,
+								"input": "src/custom-themes/orange-red.scss"
+							},
+							{
+								"bundleName": "orange-red-dark",
+								"inject": false,
+								"input": "src/custom-themes/orange-red-dark.scss"
+							},
+							{
+								"bundleName": "orange-rose",
+								"inject": false,
+								"input": "src/custom-themes/orange-rose.scss"
+							},
+							{
+								"bundleName": "orange-rose-dark",
+								"inject": false,
+								"input": "src/custom-themes/orange-rose-dark.scss"
+							},
+							{
+								"bundleName": "orange-spring-green",
+								"inject": false,
+								"input": "src/custom-themes/orange-spring-green.scss"
+							},
+							{
+								"bundleName": "orange-spring-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/orange-spring-green-dark.scss"
+							},
+							{
+								"bundleName": "orange-violet",
+								"inject": false,
+								"input": "src/custom-themes/orange-violet.scss"
+							},
+							{
+								"bundleName": "orange-violet-dark",
+								"inject": false,
+								"input": "src/custom-themes/orange-violet-dark.scss"
+							},
+							{
+								"bundleName": "orange-yellow",
+								"inject": false,
+								"input": "src/custom-themes/orange-yellow.scss"
+							},
+							{
+								"bundleName": "orange-yellow-dark",
+								"inject": false,
+								"input": "src/custom-themes/orange-yellow-dark.scss"
+							},
+							{
+								"bundleName": "red-azure",
+								"inject": false,
+								"input": "src/custom-themes/red-azure.scss"
+							},
+							{
+								"bundleName": "red-azure-dark",
+								"inject": false,
+								"input": "src/custom-themes/red-azure-dark.scss"
+							},
+							{
+								"bundleName": "red-blue",
+								"inject": false,
+								"input": "src/custom-themes/red-blue.scss"
+							},
+							{
+								"bundleName": "red-blue-dark",
+								"inject": false,
+								"input": "src/custom-themes/red-blue-dark.scss"
+							},
+							{
+								"bundleName": "red-chartreuse",
+								"inject": false,
+								"input": "src/custom-themes/red-chartreuse.scss"
+							},
+							{
+								"bundleName": "red-chartreuse-dark",
+								"inject": false,
+								"input": "src/custom-themes/red-chartreuse-dark.scss"
+							},
+							{
+								"bundleName": "red-cyan",
+								"inject": false,
+								"input": "src/custom-themes/red-cyan.scss"
+							},
+							{
+								"bundleName": "red-cyan-dark",
+								"inject": false,
+								"input": "src/custom-themes/red-cyan-dark.scss"
+							},
+							{
+								"bundleName": "red-green",
+								"inject": false,
+								"input": "src/custom-themes/red-green.scss"
+							},
+							{
+								"bundleName": "red-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/red-green-dark.scss"
+							},
+							{
+								"bundleName": "red-magenta",
+								"inject": false,
+								"input": "src/custom-themes/red-magenta.scss"
+							},
+							{
+								"bundleName": "red-magenta-dark",
+								"inject": false,
+								"input": "src/custom-themes/red-magenta-dark.scss"
+							},
+							{
+								"bundleName": "red-orange",
+								"inject": false,
+								"input": "src/custom-themes/red-orange.scss"
+							},
+							{
+								"bundleName": "red-orange-dark",
+								"inject": false,
+								"input": "src/custom-themes/red-orange-dark.scss"
+							},
+							{
+								"bundleName": "red-rose",
+								"inject": false,
+								"input": "src/custom-themes/red-rose.scss"
+							},
+							{
+								"bundleName": "red-rose-dark",
+								"inject": false,
+								"input": "src/custom-themes/red-rose-dark.scss"
+							},
+							{
+								"bundleName": "red-spring-green",
+								"inject": false,
+								"input": "src/custom-themes/red-spring-green.scss"
+							},
+							{
+								"bundleName": "red-spring-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/red-spring-green-dark.scss"
+							},
+							{
+								"bundleName": "red-violet",
+								"inject": false,
+								"input": "src/custom-themes/red-violet.scss"
+							},
+							{
+								"bundleName": "red-violet-dark",
+								"inject": false,
+								"input": "src/custom-themes/red-violet-dark.scss"
+							},
+							{
+								"bundleName": "red-yellow",
+								"inject": false,
+								"input": "src/custom-themes/red-yellow.scss"
+							},
+							{
+								"bundleName": "red-yellow-dark",
+								"inject": false,
+								"input": "src/custom-themes/red-yellow-dark.scss"
+							},
+							{
+								"bundleName": "rose-azure",
+								"inject": false,
+								"input": "src/custom-themes/rose-azure.scss"
+							},
+							{
+								"bundleName": "rose-azure-dark",
+								"inject": false,
+								"input": "src/custom-themes/rose-azure-dark.scss"
+							},
+							{
+								"bundleName": "rose-blue",
+								"inject": false,
+								"input": "src/custom-themes/rose-blue.scss"
+							},
+							{
+								"bundleName": "rose-blue-dark",
+								"inject": false,
+								"input": "src/custom-themes/rose-blue-dark.scss"
+							},
+							{
+								"bundleName": "rose-chartreuse",
+								"inject": false,
+								"input": "src/custom-themes/rose-chartreuse.scss"
+							},
+							{
+								"bundleName": "rose-chartreuse-dark",
+								"inject": false,
+								"input": "src/custom-themes/rose-chartreuse-dark.scss"
+							},
+							{
+								"bundleName": "rose-cyan",
+								"inject": false,
+								"input": "src/custom-themes/rose-cyan.scss"
+							},
+							{
+								"bundleName": "rose-cyan-dark",
+								"inject": false,
+								"input": "src/custom-themes/rose-cyan-dark.scss"
+							},
+							{
+								"bundleName": "rose-green",
+								"inject": false,
+								"input": "src/custom-themes/rose-green.scss"
+							},
+							{
+								"bundleName": "rose-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/rose-green-dark.scss"
+							},
+							{
+								"bundleName": "rose-magenta",
+								"inject": false,
+								"input": "src/custom-themes/rose-magenta.scss"
+							},
+							{
+								"bundleName": "rose-magenta-dark",
+								"inject": false,
+								"input": "src/custom-themes/rose-magenta-dark.scss"
+							},
+							{
+								"bundleName": "rose-orange",
+								"inject": false,
+								"input": "src/custom-themes/rose-orange.scss"
+							},
+							{
+								"bundleName": "rose-orange-dark",
+								"inject": false,
+								"input": "src/custom-themes/rose-orange-dark.scss"
+							},
+							{
+								"bundleName": "rose-red",
+								"inject": false,
+								"input": "src/custom-themes/rose-red.scss"
+							},
+							{
+								"bundleName": "rose-red-dark",
+								"inject": false,
+								"input": "src/custom-themes/rose-red-dark.scss"
+							},
+							{
+								"bundleName": "rose-spring-green",
+								"inject": false,
+								"input": "src/custom-themes/rose-spring-green.scss"
+							},
+							{
+								"bundleName": "rose-spring-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/rose-spring-green-dark.scss"
+							},
+							{
+								"bundleName": "rose-violet",
+								"inject": false,
+								"input": "src/custom-themes/rose-violet.scss"
+							},
+							{
+								"bundleName": "rose-violet-dark",
+								"inject": false,
+								"input": "src/custom-themes/rose-violet-dark.scss"
+							},
+							{
+								"bundleName": "rose-yellow",
+								"inject": false,
+								"input": "src/custom-themes/rose-yellow.scss"
+							},
+							{
+								"bundleName": "rose-yellow-dark",
+								"inject": false,
+								"input": "src/custom-themes/rose-yellow-dark.scss"
+							},
+							{
+								"bundleName": "spring-green-azure",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-azure.scss"
+							},
+							{
+								"bundleName": "spring-green-azure-dark",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-azure-dark.scss"
+							},
+							{
+								"bundleName": "spring-green-blue",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-blue.scss"
+							},
+							{
+								"bundleName": "spring-green-blue-dark",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-blue-dark.scss"
+							},
+							{
+								"bundleName": "spring-green-chartreuse",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-chartreuse.scss"
+							},
+							{
+								"bundleName": "spring-green-chartreuse-dark",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-chartreuse-dark.scss"
+							},
+							{
+								"bundleName": "spring-green-cyan",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-cyan.scss"
+							},
+							{
+								"bundleName": "spring-green-cyan-dark",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-cyan-dark.scss"
+							},
+							{
+								"bundleName": "spring-green-green",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-green.scss"
+							},
+							{
+								"bundleName": "spring-green-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-green-dark.scss"
+							},
+							{
+								"bundleName": "spring-green-magenta",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-magenta.scss"
+							},
+							{
+								"bundleName": "spring-green-magenta-dark",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-magenta-dark.scss"
+							},
+							{
+								"bundleName": "spring-green-orange",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-orange.scss"
+							},
+							{
+								"bundleName": "spring-green-orange-dark",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-orange-dark.scss"
+							},
+							{
+								"bundleName": "spring-green-red",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-red.scss"
+							},
+							{
+								"bundleName": "spring-green-red-dark",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-red-dark.scss"
+							},
+							{
+								"bundleName": "spring-green-rose",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-rose.scss"
+							},
+							{
+								"bundleName": "spring-green-rose-dark",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-rose-dark.scss"
+							},
+							{
+								"bundleName": "spring-green-violet",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-violet.scss"
+							},
+							{
+								"bundleName": "spring-green-violet-dark",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-violet-dark.scss"
+							},
+							{
+								"bundleName": "spring-green-yellow",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-yellow.scss"
+							},
+							{
+								"bundleName": "spring-green-yellow-dark",
+								"inject": false,
+								"input": "src/custom-themes/spring-green-yellow-dark.scss"
+							},
+							{
+								"bundleName": "violet-azure",
+								"inject": false,
+								"input": "src/custom-themes/violet-azure.scss"
+							},
+							{
+								"bundleName": "violet-azure-dark",
+								"inject": false,
+								"input": "src/custom-themes/violet-azure-dark.scss"
+							},
+							{
+								"bundleName": "violet-blue",
+								"inject": false,
+								"input": "src/custom-themes/violet-blue.scss"
+							},
+							{
+								"bundleName": "violet-blue-dark",
+								"inject": false,
+								"input": "src/custom-themes/violet-blue-dark.scss"
+							},
+							{
+								"bundleName": "violet-chartreuse",
+								"inject": false,
+								"input": "src/custom-themes/violet-chartreuse.scss"
+							},
+							{
+								"bundleName": "violet-chartreuse-dark",
+								"inject": false,
+								"input": "src/custom-themes/violet-chartreuse-dark.scss"
+							},
+							{
+								"bundleName": "violet-cyan",
+								"inject": false,
+								"input": "src/custom-themes/violet-cyan.scss"
+							},
+							{
+								"bundleName": "violet-cyan-dark",
+								"inject": false,
+								"input": "src/custom-themes/violet-cyan-dark.scss"
+							},
+							{
+								"bundleName": "violet-green",
+								"inject": false,
+								"input": "src/custom-themes/violet-green.scss"
+							},
+							{
+								"bundleName": "violet-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/violet-green-dark.scss"
+							},
+							{
+								"bundleName": "violet-magenta",
+								"inject": false,
+								"input": "src/custom-themes/violet-magenta.scss"
+							},
+							{
+								"bundleName": "violet-magenta-dark",
+								"inject": false,
+								"input": "src/custom-themes/violet-magenta-dark.scss"
+							},
+							{
+								"bundleName": "violet-orange",
+								"inject": false,
+								"input": "src/custom-themes/violet-orange.scss"
+							},
+							{
+								"bundleName": "violet-orange-dark",
+								"inject": false,
+								"input": "src/custom-themes/violet-orange-dark.scss"
+							},
+							{
+								"bundleName": "violet-red",
+								"inject": false,
+								"input": "src/custom-themes/violet-red.scss"
+							},
+							{
+								"bundleName": "violet-red-dark",
+								"inject": false,
+								"input": "src/custom-themes/violet-red-dark.scss"
+							},
+							{
+								"bundleName": "violet-rose",
+								"inject": false,
+								"input": "src/custom-themes/violet-rose.scss"
+							},
+							{
+								"bundleName": "violet-rose-dark",
+								"inject": false,
+								"input": "src/custom-themes/violet-rose-dark.scss"
+							},
+							{
+								"bundleName": "violet-spring-green",
+								"inject": false,
+								"input": "src/custom-themes/violet-spring-green.scss"
+							},
+							{
+								"bundleName": "violet-spring-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/violet-spring-green-dark.scss"
+							},
+							{
+								"bundleName": "violet-yellow",
+								"inject": false,
+								"input": "src/custom-themes/violet-yellow.scss"
+							},
+							{
+								"bundleName": "violet-yellow-dark",
+								"inject": false,
+								"input": "src/custom-themes/violet-yellow-dark.scss"
+							},
+							{
+								"bundleName": "yellow-azure",
+								"inject": false,
+								"input": "src/custom-themes/yellow-azure.scss"
+							},
+							{
+								"bundleName": "yellow-azure-dark",
+								"inject": false,
+								"input": "src/custom-themes/yellow-azure-dark.scss"
+							},
+							{
+								"bundleName": "yellow-blue",
+								"inject": false,
+								"input": "src/custom-themes/yellow-blue.scss"
+							},
+							{
+								"bundleName": "yellow-blue-dark",
+								"inject": false,
+								"input": "src/custom-themes/yellow-blue-dark.scss"
+							},
+							{
+								"bundleName": "yellow-chartreuse",
+								"inject": false,
+								"input": "src/custom-themes/yellow-chartreuse.scss"
+							},
+							{
+								"bundleName": "yellow-chartreuse-dark",
+								"inject": false,
+								"input": "src/custom-themes/yellow-chartreuse-dark.scss"
+							},
+							{
+								"bundleName": "yellow-cyan",
+								"inject": false,
+								"input": "src/custom-themes/yellow-cyan.scss"
+							},
+							{
+								"bundleName": "yellow-cyan-dark",
+								"inject": false,
+								"input": "src/custom-themes/yellow-cyan-dark.scss"
+							},
+							{
+								"bundleName": "yellow-green",
+								"inject": false,
+								"input": "src/custom-themes/yellow-green.scss"
+							},
+							{
+								"bundleName": "yellow-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/yellow-green-dark.scss"
+							},
+							{
+								"bundleName": "yellow-magenta",
+								"inject": false,
+								"input": "src/custom-themes/yellow-magenta.scss"
+							},
+							{
+								"bundleName": "yellow-magenta-dark",
+								"inject": false,
+								"input": "src/custom-themes/yellow-magenta-dark.scss"
+							},
+							{
+								"bundleName": "yellow-orange",
+								"inject": false,
+								"input": "src/custom-themes/yellow-orange.scss"
+							},
+							{
+								"bundleName": "yellow-orange-dark",
+								"inject": false,
+								"input": "src/custom-themes/yellow-orange-dark.scss"
+							},
+							{
+								"bundleName": "yellow-red",
+								"inject": false,
+								"input": "src/custom-themes/yellow-red.scss"
+							},
+							{
+								"bundleName": "yellow-red-dark",
+								"inject": false,
+								"input": "src/custom-themes/yellow-red-dark.scss"
+							},
+							{
+								"bundleName": "yellow-rose",
+								"inject": false,
+								"input": "src/custom-themes/yellow-rose.scss"
+							},
+							{
+								"bundleName": "yellow-rose-dark",
+								"inject": false,
+								"input": "src/custom-themes/yellow-rose-dark.scss"
+							},
+							{
+								"bundleName": "yellow-spring-green",
+								"inject": false,
+								"input": "src/custom-themes/yellow-spring-green.scss"
+							},
+							{
+								"bundleName": "yellow-spring-green-dark",
+								"inject": false,
+								"input": "src/custom-themes/yellow-spring-green-dark.scss"
+							},
+							{
+								"bundleName": "yellow-violet",
+								"inject": false,
+								"input": "src/custom-themes/yellow-violet.scss"
+							},
+							{
+								"bundleName": "yellow-violet-dark",
+								"inject": false,
+								"input": "src/custom-themes/yellow-violet-dark.scss"
+							},
+							{
+								"input": "src/styles.scss"
+							}
+						],
+						"tsConfig": "tsconfig.app.json"
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n"
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"configurations": {
+						"development": {
+							"buildTarget": "ng-mat-app:build:development"
+						},
+						"production": {
+							"buildTarget": "ng-mat-app:build:production"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4301
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"assets": [
+							{
+								"glob": "**/*",
+								"input": "public"
+							}
+						],
+						"inlineStyleLanguage": "scss",
+						"polyfills": [],
+						"scripts": [],
+						"styles": [
+							"@angular/material/prebuilt-themes/magenta-violet.scss",
+							"src/styles.scss"
+						],
+						"tsConfig": "tsconfig.spec.json"
+					}
+				}
+			},
+			"prefix": "app",
+			"projectType": "application",
+			"root": "",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"sourceRoot": "src"
+		}
+	},
+	"version": 1
 }
