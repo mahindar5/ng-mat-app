@@ -7115,13 +7115,8 @@
       "format": "esm"
     },
     "src/app/theme-picker/theme-picker.ts": {
-      "bytes": 16164,
+      "bytes": 16090,
       "imports": [
-        {
-          "path": "node_modules/@angular/common/fesm2022/common.mjs",
-          "kind": "import-statement",
-          "original": "@angular/common"
-        },
         {
           "path": "@angular/core",
           "kind": "import-statement",
@@ -7241,7 +7236,7 @@
       "format": "esm"
     },
     "src/app/app.component.ts": {
-      "bytes": 6252,
+      "bytes": 7214,
       "imports": [
         {
           "path": "@angular/core",
@@ -7292,6 +7287,11 @@
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
           "kind": "import-statement",
           "original": "@angular/core"
+        },
+        {
+          "path": "node_modules/@angular/router/fesm2022/router.mjs",
+          "kind": "import-statement",
+          "original": "@angular/router"
         },
         {
           "path": "node_modules/@angular/material/fesm2022/toolbar.mjs",
@@ -7502,7 +7502,7 @@
       "format": "esm"
     },
     "src/app/ai-dashboard/ai-dashboard.component.ts": {
-      "bytes": 1277,
+      "bytes": 3399,
       "imports": [
         {
           "path": "@angular/core",
@@ -7523,12 +7523,22 @@
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
           "kind": "import-statement",
           "original": "@angular/core"
+        },
+        {
+          "path": "node_modules/@angular/router/fesm2022/router.mjs",
+          "kind": "import-statement",
+          "original": "@angular/router"
+        },
+        {
+          "path": "node_modules/@angular/material/fesm2022/tabs.mjs",
+          "kind": "import-statement",
+          "original": "@angular/material/tabs"
         }
       ],
       "format": "esm"
     },
     "src/app/ai-dashboard/ai-agent/ai-agent.component.ts": {
-      "bytes": 1457,
+      "bytes": 913,
       "imports": [
         {
           "path": "@angular/core",
@@ -7544,11 +7554,6 @@
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
           "kind": "import-statement",
           "original": "@angular/core"
-        },
-        {
-          "path": "node_modules/@angular/material/fesm2022/tabs.mjs",
-          "kind": "import-statement",
-          "original": "@angular/material/tabs"
         }
       ],
       "format": "esm"
@@ -7586,7 +7591,7 @@
       "format": "esm"
     },
     "src/app/app.routes.ts": {
-      "bytes": 788,
+      "bytes": 918,
       "imports": [
         {
           "path": "@angular/router",
@@ -7612,6 +7617,11 @@
           "path": "src/app/ai-dashboard/settings/settings.component.ts",
           "kind": "dynamic-import",
           "original": "./ai-dashboard/settings/settings.component"
+        },
+        {
+          "path": "src/app/ai-dashboard/ai-chat/ai-chat.component.ts",
+          "kind": "dynamic-import",
+          "original": "./ai-dashboard/ai-chat/ai-chat.component"
         }
       ],
       "format": "esm"
@@ -7670,10 +7680,6 @@
     },
     "src/app/theme-picker/theme-picker.scss": {
       "bytes": 765,
-      "imports": []
-    },
-    "src/app/ai-dashboard/ai-dashboard.component.scss": {
-      "bytes": 0,
       "imports": []
     },
     "src/app/app.component.scss": {
@@ -11392,18 +11398,18 @@
     }
   },
   "outputs": {
-    "main-THKAKCY5.js": {
+    "main-VSVA3ASL.js": {
       "imports": [
         {
-          "path": "chunk-GJEIJUFI.js",
+          "path": "chunk-UYMLNNJE.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-73TN7OH5.js",
+          "path": "chunk-Z2ZGQSWM.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-OH7C4Y75.js",
+          "path": "chunk-IEYSJXVH.js",
           "kind": "import-statement"
         },
         {
@@ -11411,15 +11417,15 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-VSYNFH4G.js",
+          "path": "chunk-DG3JXD7D.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-FCA7DEQO.js",
+          "path": "chunk-ULXYVSOB.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-5ISX3JWG.js",
+          "path": "chunk-FOP5ZZFX.js",
           "kind": "dynamic-import"
         },
         {
@@ -11428,6 +11434,10 @@
         },
         {
           "path": "chunk-7NXL6VFZ.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "chunk-PWGHIEOJ.js",
           "kind": "dynamic-import"
         }
       ],
@@ -11441,7 +11451,7 @@
           "bytesInOutput": 2498
         },
         "node_modules/@angular/material/fesm2022/expansion.mjs": {
-          "bytesInOutput": 16800
+          "bytesInOutput": 16801
         },
         "node_modules/@angular/material/fesm2022/icon.mjs": {
           "bytesInOutput": 12338
@@ -11450,10 +11460,10 @@
           "bytesInOutput": 31727
         },
         "node_modules/@angular/material/fesm2022/list.mjs": {
-          "bytesInOutput": 26217
+          "bytesInOutput": 26218
         },
         "node_modules/@angular/material/fesm2022/sidenav.mjs": {
-          "bytesInOutput": 25890
+          "bytesInOutput": 25891
         },
         "node_modules/@angular/material/fesm2022/toolbar.mjs": {
           "bytesInOutput": 3351
@@ -11462,19 +11472,19 @@
           "bytesInOutput": 53395
         },
         "node_modules/@angular/cdk/fesm2022/overlay.mjs": {
-          "bytesInOutput": 41017
+          "bytesInOutput": 41018
         },
         "node_modules/@angular/material/fesm2022/menu.mjs": {
-          "bytesInOutput": 23286
+          "bytesInOutput": 23289
         },
         "node_modules/@angular/material/fesm2022/select.mjs": {
-          "bytesInOutput": 24915
+          "bytesInOutput": 24916
         },
         "node_modules/@angular/material/fesm2022/slide-toggle.mjs": {
           "bytesInOutput": 22076
         },
         "node_modules/@angular/material/fesm2022/tooltip.mjs": {
-          "bytesInOutput": 17100
+          "bytesInOutput": 17099
         },
         "src/app/style-manager/style-manager.ts": {
           "bytesInOutput": 545
@@ -11483,19 +11493,19 @@
           "bytesInOutput": 477
         },
         "src/app/theme-picker/theme-picker.ts": {
-          "bytesInOutput": 7135
+          "bytesInOutput": 7126
         },
         "src/app/app.component.ts": {
-          "bytesInOutput": 2136
+          "bytesInOutput": 2335
         },
         "node_modules/@angular/platform-browser/fesm2022/animations/async.mjs": {
           "bytesInOutput": 3121
         },
         "node_modules/@angular/service-worker/fesm2022/service-worker.mjs": {
-          "bytesInOutput": 4926
+          "bytesInOutput": 4928
         },
         "src/app/app.routes.ts": {
-          "bytesInOutput": 514
+          "bytesInOutput": 606
         },
         "src/app/app.config.ts": {
           "bytesInOutput": 123
@@ -11504,12 +11514,12 @@
           "bytesInOutput": 37
         }
       },
-      "bytes": 329055
+      "bytes": 329341
     },
-    "chunk-VSYNFH4G.js": {
+    "chunk-DG3JXD7D.js": {
       "imports": [
         {
-          "path": "chunk-OH7C4Y75.js",
+          "path": "chunk-IEYSJXVH.js",
           "kind": "import-statement"
         },
         {
@@ -11551,22 +11561,22 @@
       },
       "bytes": 67546
     },
-    "chunk-FCA7DEQO.js": {
+    "chunk-ULXYVSOB.js": {
       "imports": [
         {
-          "path": "chunk-GJEIJUFI.js",
+          "path": "chunk-UYMLNNJE.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-KLR4SR7F.js",
+          "path": "chunk-ZXR5MOBC.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-73TN7OH5.js",
+          "path": "chunk-Z2ZGQSWM.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-OH7C4Y75.js",
+          "path": "chunk-IEYSJXVH.js",
           "kind": "import-statement"
         },
         {
@@ -11580,15 +11590,15 @@
       "entryPoint": "src/app/ai-dashboard/ai-dashboard.component.ts",
       "inputs": {
         "src/app/ai-dashboard/ai-dashboard.component.ts": {
-          "bytesInOutput": 435
+          "bytesInOutput": 1210
         }
       },
-      "bytes": 655
+      "bytes": 1547
     },
-    "chunk-GJEIJUFI.js": {
+    "chunk-UYMLNNJE.js": {
       "imports": [
         {
-          "path": "chunk-OH7C4Y75.js",
+          "path": "chunk-IEYSJXVH.js",
           "kind": "import-statement"
         },
         {
@@ -11603,7 +11613,8 @@
         "d",
         "e",
         "f",
-        "g"
+        "g",
+        "h"
       ],
       "inputs": {
         "node_modules/@angular/common/fesm2022/http.mjs": {
@@ -11616,20 +11627,20 @@
           "bytesInOutput": 68016
         }
       },
-      "bytes": 92282
+      "bytes": 92290
     },
-    "chunk-5ISX3JWG.js": {
+    "chunk-FOP5ZZFX.js": {
       "imports": [
         {
-          "path": "chunk-KLR4SR7F.js",
+          "path": "chunk-ZXR5MOBC.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-73TN7OH5.js",
+          "path": "chunk-Z2ZGQSWM.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-OH7C4Y75.js",
+          "path": "chunk-IEYSJXVH.js",
           "kind": "import-statement"
         },
         {
@@ -11643,15 +11654,15 @@
       "entryPoint": "src/app/ai-dashboard/ai-agent/ai-agent.component.ts",
       "inputs": {
         "src/app/ai-dashboard/ai-agent/ai-agent.component.ts": {
-          "bytesInOutput": 444
+          "bytesInOutput": 235
         }
       },
-      "bytes": 650
+      "bytes": 427
     },
-    "chunk-KLR4SR7F.js": {
+    "chunk-ZXR5MOBC.js": {
       "imports": [
         {
-          "path": "chunk-73TN7OH5.js",
+          "path": "chunk-Z2ZGQSWM.js",
           "kind": "import-statement"
         },
         {
@@ -11671,10 +11682,10 @@
       },
       "bytes": 42651
     },
-    "chunk-73TN7OH5.js": {
+    "chunk-Z2ZGQSWM.js": {
       "imports": [
         {
-          "path": "chunk-OH7C4Y75.js",
+          "path": "chunk-IEYSJXVH.js",
           "kind": "import-statement"
         },
         {
@@ -11787,7 +11798,7 @@
       },
       "bytes": 78884
     },
-    "chunk-OH7C4Y75.js": {
+    "chunk-IEYSJXVH.js": {
       "imports": [
         {
           "path": "chunk-BWLM533U.js",
@@ -11807,15 +11818,14 @@
         "j",
         "k",
         "l",
-        "m",
-        "n"
+        "m"
       ],
       "inputs": {
         "node_modules/@angular/common/fesm2022/common.mjs": {
-          "bytesInOutput": 8095
+          "bytesInOutput": 7966
         }
       },
-      "bytes": 8344
+      "bytes": 8191
     },
     "chunk-PWGHIEOJ.js": {
       "imports": [
@@ -12385,16 +12395,6 @@
         }
       },
       "bytes": 652,
-      "ng-component": true
-    },
-    "ai-dashboard.component-JX6V7RHU.css": {
-      "imports": [],
-      "inputs": {
-        "src/app/ai-dashboard/ai-dashboard.component.scss": {
-          "bytesInOutput": 0
-        }
-      },
-      "bytes": 0,
       "ng-component": true
     },
     "app.component-UCAYFGNY.css": {
