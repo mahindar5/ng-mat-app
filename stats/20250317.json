@@ -6625,6 +6625,98 @@
       ],
       "format": "esm"
     },
+    "node_modules/@angular/cdk/fesm2022/observers/private.mjs": {
+      "bytes": 5333,
+      "imports": [
+        {
+          "path": "node_modules/@angular/core/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core"
+        },
+        {
+          "path": "node_modules/rxjs/dist/esm/index.js",
+          "kind": "import-statement",
+          "original": "rxjs"
+        },
+        {
+          "path": "node_modules/rxjs/dist/esm/operators/index.js",
+          "kind": "import-statement",
+          "original": "rxjs/operators"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@angular/material/fesm2022/form-field.mjs": {
+      "bytes": 93901,
+      "imports": [
+        {
+          "path": "node_modules/@angular/core/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core"
+        },
+        {
+          "path": "node_modules/@angular/cdk/fesm2022/a11y.mjs",
+          "kind": "import-statement",
+          "original": "@angular/cdk/a11y"
+        },
+        {
+          "path": "node_modules/@angular/cdk/fesm2022/bidi.mjs",
+          "kind": "import-statement",
+          "original": "@angular/cdk/bidi"
+        },
+        {
+          "path": "node_modules/@angular/cdk/fesm2022/coercion.mjs",
+          "kind": "import-statement",
+          "original": "@angular/cdk/coercion"
+        },
+        {
+          "path": "node_modules/@angular/cdk/fesm2022/platform.mjs",
+          "kind": "import-statement",
+          "original": "@angular/cdk/platform"
+        },
+        {
+          "path": "node_modules/@angular/common/fesm2022/common.mjs",
+          "kind": "import-statement",
+          "original": "@angular/common"
+        },
+        {
+          "path": "node_modules/rxjs/dist/esm/index.js",
+          "kind": "import-statement",
+          "original": "rxjs"
+        },
+        {
+          "path": "node_modules/rxjs/dist/esm/operators/index.js",
+          "kind": "import-statement",
+          "original": "rxjs/operators"
+        },
+        {
+          "path": "node_modules/@angular/cdk/fesm2022/observers/private.mjs",
+          "kind": "import-statement",
+          "original": "@angular/cdk/observers/private"
+        },
+        {
+          "path": "node_modules/@angular/cdk/fesm2022/observers.mjs",
+          "kind": "import-statement",
+          "original": "@angular/cdk/observers"
+        },
+        {
+          "path": "node_modules/@angular/material/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/material/core"
+        }
+      ],
+      "format": "esm"
+    },
     "node_modules/@angular/cdk/fesm2022/overlay.mjs": {
       "bytes": 129662,
       "imports": [
@@ -6787,6 +6879,92 @@
       ],
       "format": "esm"
     },
+    "node_modules/@angular/material/fesm2022/select.mjs": {
+      "bytes": 64794,
+      "imports": [
+        {
+          "path": "node_modules/@angular/cdk/fesm2022/overlay.mjs",
+          "kind": "import-statement",
+          "original": "@angular/cdk/overlay"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core"
+        },
+        {
+          "path": "node_modules/@angular/material/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/material/core"
+        },
+        {
+          "path": "node_modules/@angular/material/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/material/core"
+        },
+        {
+          "path": "node_modules/@angular/material/fesm2022/form-field.mjs",
+          "kind": "import-statement",
+          "original": "@angular/material/form-field"
+        },
+        {
+          "path": "node_modules/@angular/material/fesm2022/form-field.mjs",
+          "kind": "import-statement",
+          "original": "@angular/material/form-field"
+        },
+        {
+          "path": "node_modules/@angular/cdk/fesm2022/scrolling.mjs",
+          "kind": "import-statement",
+          "original": "@angular/cdk/scrolling"
+        },
+        {
+          "path": "node_modules/@angular/cdk/fesm2022/a11y.mjs",
+          "kind": "import-statement",
+          "original": "@angular/cdk/a11y"
+        },
+        {
+          "path": "node_modules/@angular/cdk/fesm2022/bidi.mjs",
+          "kind": "import-statement",
+          "original": "@angular/cdk/bidi"
+        },
+        {
+          "path": "node_modules/@angular/cdk/fesm2022/collections.mjs",
+          "kind": "import-statement",
+          "original": "@angular/cdk/collections"
+        },
+        {
+          "path": "node_modules/@angular/cdk/fesm2022/keycodes.mjs",
+          "kind": "import-statement",
+          "original": "@angular/cdk/keycodes"
+        },
+        {
+          "path": "node_modules/@angular/forms/fesm2022/forms.mjs",
+          "kind": "import-statement",
+          "original": "@angular/forms"
+        },
+        {
+          "path": "node_modules/rxjs/dist/esm/index.js",
+          "kind": "import-statement",
+          "original": "rxjs"
+        },
+        {
+          "path": "node_modules/rxjs/dist/esm/operators/index.js",
+          "kind": "import-statement",
+          "original": "rxjs/operators"
+        },
+        {
+          "path": "node_modules/@angular/common/fesm2022/common.mjs",
+          "kind": "import-statement",
+          "original": "@angular/common"
+        }
+      ],
+      "format": "esm"
+    },
     "node_modules/@angular/material/fesm2022/slide-toggle.mjs": {
       "bytes": 34685,
       "imports": [
@@ -6921,7 +7099,7 @@
       "format": "esm"
     },
     "src/app/theme-picker/theme-storage/theme-storage.ts": {
-      "bytes": 1959,
+      "bytes": 1467,
       "imports": [
         {
           "path": "@angular/core",
@@ -6937,8 +7115,13 @@
       "format": "esm"
     },
     "src/app/theme-picker/theme-picker.ts": {
-      "bytes": 12339,
+      "bytes": 16164,
       "imports": [
+        {
+          "path": "node_modules/@angular/common/fesm2022/common.mjs",
+          "kind": "import-statement",
+          "original": "@angular/common"
+        },
         {
           "path": "@angular/core",
           "kind": "import-statement",
@@ -6955,6 +7138,11 @@
           "original": "@angular/material/button"
         },
         {
+          "path": "node_modules/@angular/material/fesm2022/form-field.mjs",
+          "kind": "import-statement",
+          "original": "@angular/material/form-field"
+        },
+        {
           "path": "node_modules/@angular/material/fesm2022/icon.mjs",
           "kind": "import-statement",
           "original": "@angular/material/icon"
@@ -6963,6 +7151,11 @@
           "path": "node_modules/@angular/material/fesm2022/menu.mjs",
           "kind": "import-statement",
           "original": "@angular/material/menu"
+        },
+        {
+          "path": "node_modules/@angular/material/fesm2022/select.mjs",
+          "kind": "import-statement",
+          "original": "@angular/material/select"
         },
         {
           "path": "node_modules/@angular/material/fesm2022/slide-toggle.mjs",
@@ -7023,6 +7216,21 @@
           "path": "node_modules/@angular/material/fesm2022/slide-toggle.mjs",
           "kind": "import-statement",
           "original": "@angular/material/slide-toggle"
+        },
+        {
+          "path": "node_modules/@angular/material/fesm2022/form-field.mjs",
+          "kind": "import-statement",
+          "original": "@angular/material/form-field"
+        },
+        {
+          "path": "node_modules/@angular/material/fesm2022/select.mjs",
+          "kind": "import-statement",
+          "original": "@angular/material/select"
+        },
+        {
+          "path": "node_modules/@angular/material/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/material/core"
         },
         {
           "path": "node_modules/@angular/forms/fesm2022/forms.mjs",
@@ -7213,32 +7421,6 @@
           "path": "<runtime>",
           "kind": "import-statement",
           "external": true
-        }
-      ],
-      "format": "esm"
-    },
-    "node_modules/@angular/cdk/fesm2022/observers/private.mjs": {
-      "bytes": 5333,
-      "imports": [
-        {
-          "path": "node_modules/@angular/core/fesm2022/core.mjs",
-          "kind": "import-statement",
-          "original": "@angular/core"
-        },
-        {
-          "path": "node_modules/@angular/core/fesm2022/core.mjs",
-          "kind": "import-statement",
-          "original": "@angular/core"
-        },
-        {
-          "path": "node_modules/rxjs/dist/esm/index.js",
-          "kind": "import-statement",
-          "original": "rxjs"
-        },
-        {
-          "path": "node_modules/rxjs/dist/esm/operators/index.js",
-          "kind": "import-statement",
-          "original": "rxjs/operators"
         }
       ],
       "format": "esm"
@@ -7487,7 +7669,7 @@
       "format": "esm"
     },
     "src/app/theme-picker/theme-picker.scss": {
-      "bytes": 550,
+      "bytes": 765,
       "imports": []
     },
     "src/app/ai-dashboard/ai-dashboard.component.scss": {
@@ -11210,42 +11392,42 @@
     }
   },
   "outputs": {
-    "main-CMQLE7XN.js": {
+    "main-Y6XJSMSM.js": {
       "imports": [
         {
-          "path": "chunk-FETXW4AZ.js",
+          "path": "chunk-GJEIJUFI.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-UBZBT2XB.js",
+          "path": "chunk-73TN7OH5.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-6MC5DDIC.js",
+          "path": "chunk-OH7C4Y75.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JYOUAVTI.js",
+          "path": "chunk-BWLM533U.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-FKWNRTRO.js",
+          "path": "chunk-VSYNFH4G.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-42X4WXP4.js",
+          "path": "chunk-FCA7DEQO.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-MEM7DWJG.js",
+          "path": "chunk-5ISX3JWG.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-LT5FNK44.js",
+          "path": "chunk-PWGHIEOJ.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-TGFM7WVQ.js",
+          "path": "chunk-NS2VRJRJ.js",
           "kind": "dynamic-import"
         }
       ],
@@ -11256,55 +11438,61 @@
           "bytesInOutput": 7755
         },
         "node_modules/@angular/cdk/fesm2022/accordion.mjs": {
-          "bytesInOutput": 2499
+          "bytesInOutput": 2498
         },
         "node_modules/@angular/material/fesm2022/expansion.mjs": {
-          "bytesInOutput": 16805
+          "bytesInOutput": 16800
         },
         "node_modules/@angular/material/fesm2022/icon.mjs": {
-          "bytesInOutput": 12336
+          "bytesInOutput": 12338
         },
         "node_modules/@angular/forms/fesm2022/forms.mjs": {
-          "bytesInOutput": 21138
+          "bytesInOutput": 31727
         },
         "node_modules/@angular/material/fesm2022/list.mjs": {
-          "bytesInOutput": 26216
+          "bytesInOutput": 26217
         },
         "node_modules/@angular/material/fesm2022/sidenav.mjs": {
-          "bytesInOutput": 25895
+          "bytesInOutput": 25890
         },
         "node_modules/@angular/material/fesm2022/toolbar.mjs": {
-          "bytesInOutput": 3350
+          "bytesInOutput": 3351
+        },
+        "node_modules/@angular/material/fesm2022/form-field.mjs": {
+          "bytesInOutput": 53395
         },
         "node_modules/@angular/cdk/fesm2022/overlay.mjs": {
-          "bytesInOutput": 33916
+          "bytesInOutput": 41017
         },
         "node_modules/@angular/material/fesm2022/menu.mjs": {
-          "bytesInOutput": 23294
+          "bytesInOutput": 23286
+        },
+        "node_modules/@angular/material/fesm2022/select.mjs": {
+          "bytesInOutput": 24915
         },
         "node_modules/@angular/material/fesm2022/slide-toggle.mjs": {
-          "bytesInOutput": 22079
+          "bytesInOutput": 22076
         },
         "node_modules/@angular/material/fesm2022/tooltip.mjs": {
-          "bytesInOutput": 17099
+          "bytesInOutput": 17100
         },
         "src/app/style-manager/style-manager.ts": {
-          "bytesInOutput": 544
+          "bytesInOutput": 545
         },
         "src/app/theme-picker/theme-storage/theme-storage.ts": {
-          "bytesInOutput": 699
+          "bytesInOutput": 477
         },
         "src/app/theme-picker/theme-picker.ts": {
-          "bytesInOutput": 5388
+          "bytesInOutput": 7135
         },
         "src/app/app.component.ts": {
-          "bytesInOutput": 2139
+          "bytesInOutput": 2136
         },
         "node_modules/@angular/platform-browser/fesm2022/animations/async.mjs": {
-          "bytesInOutput": 3118
+          "bytesInOutput": 3121
         },
         "node_modules/@angular/service-worker/fesm2022/service-worker.mjs": {
-          "bytesInOutput": 4925
+          "bytesInOutput": 4926
         },
         "src/app/app.routes.ts": {
           "bytesInOutput": 514
@@ -11316,16 +11504,16 @@
           "bytesInOutput": 37
         }
       },
-      "bytes": 231333
+      "bytes": 329055
     },
-    "chunk-FKWNRTRO.js": {
+    "chunk-VSYNFH4G.js": {
       "imports": [
         {
-          "path": "chunk-6MC5DDIC.js",
+          "path": "chunk-OH7C4Y75.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JYOUAVTI.js",
+          "path": "chunk-BWLM533U.js",
           "kind": "import-statement"
         }
       ],
@@ -11363,26 +11551,26 @@
       },
       "bytes": 67546
     },
-    "chunk-42X4WXP4.js": {
+    "chunk-FCA7DEQO.js": {
       "imports": [
         {
-          "path": "chunk-FETXW4AZ.js",
+          "path": "chunk-GJEIJUFI.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-ISY3ARFU.js",
+          "path": "chunk-KLR4SR7F.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-UBZBT2XB.js",
+          "path": "chunk-73TN7OH5.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-6MC5DDIC.js",
+          "path": "chunk-OH7C4Y75.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JYOUAVTI.js",
+          "path": "chunk-BWLM533U.js",
           "kind": "import-statement"
         }
       ],
@@ -11397,14 +11585,14 @@
       },
       "bytes": 655
     },
-    "chunk-FETXW4AZ.js": {
+    "chunk-GJEIJUFI.js": {
       "imports": [
         {
-          "path": "chunk-6MC5DDIC.js",
+          "path": "chunk-OH7C4Y75.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JYOUAVTI.js",
+          "path": "chunk-BWLM533U.js",
           "kind": "import-statement"
         }
       ],
@@ -11428,24 +11616,24 @@
           "bytesInOutput": 68016
         }
       },
-      "bytes": 92276
+      "bytes": 92282
     },
-    "chunk-MEM7DWJG.js": {
+    "chunk-5ISX3JWG.js": {
       "imports": [
         {
-          "path": "chunk-ISY3ARFU.js",
+          "path": "chunk-KLR4SR7F.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-UBZBT2XB.js",
+          "path": "chunk-73TN7OH5.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-6MC5DDIC.js",
+          "path": "chunk-OH7C4Y75.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JYOUAVTI.js",
+          "path": "chunk-BWLM533U.js",
           "kind": "import-statement"
         }
       ],
@@ -11460,14 +11648,14 @@
       },
       "bytes": 650
     },
-    "chunk-ISY3ARFU.js": {
+    "chunk-KLR4SR7F.js": {
       "imports": [
         {
-          "path": "chunk-UBZBT2XB.js",
+          "path": "chunk-73TN7OH5.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JYOUAVTI.js",
+          "path": "chunk-BWLM533U.js",
           "kind": "import-statement"
         }
       ],
@@ -11477,27 +11665,25 @@
         "c"
       ],
       "inputs": {
-        "node_modules/@angular/cdk/fesm2022/observers/private.mjs": {
-          "bytesInOutput": 1245
-        },
         "node_modules/@angular/material/fesm2022/tabs.mjs": {
-          "bytesInOutput": 41888
+          "bytesInOutput": 41886
         }
       },
-      "bytes": 43902
+      "bytes": 42651
     },
-    "chunk-UBZBT2XB.js": {
+    "chunk-73TN7OH5.js": {
       "imports": [
         {
-          "path": "chunk-6MC5DDIC.js",
+          "path": "chunk-OH7C4Y75.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JYOUAVTI.js",
+          "path": "chunk-BWLM533U.js",
           "kind": "import-statement"
         }
       ],
       "exports": [
+        "$",
         "A",
         "B",
         "C",
@@ -11517,12 +11703,26 @@
         "Q",
         "R",
         "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "_",
         "a",
+        "aa",
         "b",
+        "ba",
         "c",
+        "ca",
         "d",
+        "da",
         "e",
+        "ea",
         "f",
+        "fa",
         "g",
         "h",
         "i",
@@ -11561,33 +11761,36 @@
           "bytesInOutput": 2876
         },
         "node_modules/@angular/cdk/fesm2022/layout.mjs": {
-          "bytesInOutput": 1859
+          "bytesInOutput": 1860
         },
         "node_modules/@angular/cdk/fesm2022/a11y.mjs": {
-          "bytesInOutput": 24252
+          "bytesInOutput": 26568
         },
         "node_modules/@angular/cdk/fesm2022/bidi.mjs": {
           "bytesInOutput": 868
         },
         "node_modules/@angular/material/fesm2022/core.mjs": {
-          "bytesInOutput": 13167
+          "bytesInOutput": 26708
         },
         "node_modules/@angular/cdk/fesm2022/portal.mjs": {
-          "bytesInOutput": 5432
+          "bytesInOutput": 5438
         },
         "node_modules/@angular/cdk/fesm2022/collections.mjs": {
-          "bytesInOutput": 341
+          "bytesInOutput": 2721
         },
         "node_modules/@angular/cdk/fesm2022/scrolling.mjs": {
           "bytesInOutput": 5290
+        },
+        "node_modules/@angular/cdk/fesm2022/observers/private.mjs": {
+          "bytesInOutput": 1244
         }
       },
-      "bytes": 59110
+      "bytes": 78884
     },
-    "chunk-6MC5DDIC.js": {
+    "chunk-OH7C4Y75.js": {
       "imports": [
         {
-          "path": "chunk-JYOUAVTI.js",
+          "path": "chunk-BWLM533U.js",
           "kind": "import-statement"
         }
       ],
@@ -11603,19 +11806,21 @@
         "i",
         "j",
         "k",
-        "l"
+        "l",
+        "m",
+        "n"
       ],
       "inputs": {
         "node_modules/@angular/common/fesm2022/common.mjs": {
-          "bytesInOutput": 6846
+          "bytesInOutput": 8095
         }
       },
-      "bytes": 7047
+      "bytes": 8344
     },
-    "chunk-LT5FNK44.js": {
+    "chunk-PWGHIEOJ.js": {
       "imports": [
         {
-          "path": "chunk-JYOUAVTI.js",
+          "path": "chunk-BWLM533U.js",
           "kind": "import-statement"
         }
       ],
@@ -11630,10 +11835,10 @@
       },
       "bytes": 311
     },
-    "chunk-TGFM7WVQ.js": {
+    "chunk-NS2VRJRJ.js": {
       "imports": [
         {
-          "path": "chunk-JYOUAVTI.js",
+          "path": "chunk-BWLM533U.js",
           "kind": "import-statement"
         }
       ],
@@ -11648,7 +11853,7 @@
       },
       "bytes": 315
     },
-    "chunk-JYOUAVTI.js": {
+    "chunk-BWLM533U.js": {
       "imports": [],
       "exports": [
         "$",
@@ -11754,27 +11959,35 @@
         "e",
         "ea",
         "eb",
+        "ec",
         "f",
         "fa",
         "fb",
+        "fc",
         "g",
         "ga",
         "gb",
+        "gc",
         "h",
         "ha",
         "hb",
+        "hc",
         "i",
         "ia",
         "ib",
+        "ic",
         "j",
         "ja",
         "jb",
+        "jc",
         "k",
         "ka",
         "kb",
+        "kc",
         "l",
         "la",
         "lb",
+        "lc",
         "m",
         "ma",
         "mb",
@@ -12122,6 +12335,9 @@
         "node_modules/rxjs/dist/esm/internal/operators/multicast.js": {
           "bytesInOutput": 83
         },
+        "node_modules/rxjs/dist/esm/internal/operators/pairwise.js": {
+          "bytesInOutput": 101
+        },
         "node_modules/rxjs/dist/esm/internal/operators/publish.js": {
           "bytesInOutput": 52
         },
@@ -12146,6 +12362,9 @@
         "node_modules/rxjs/dist/esm/internal/operators/takeUntil.js": {
           "bytesInOutput": 101
         },
+        "node_modules/rxjs/dist/esm/internal/operators/takeWhile.js": {
+          "bytesInOutput": 120
+        },
         "node_modules/rxjs/dist/esm/internal/operators/tap.js": {
           "bytesInOutput": 490
         },
@@ -12153,19 +12372,19 @@
           "bytesInOutput": 0
         },
         "node_modules/@angular/core/fesm2022/core.mjs": {
-          "bytesInOutput": 117816
+          "bytesInOutput": 118745
         }
       },
-      "bytes": 150562
+      "bytes": 151784
     },
-    "theme-picker-IXYSL2NM.css": {
+    "theme-picker-R4XU72BQ.css": {
       "imports": [],
       "inputs": {
         "src/app/theme-picker/theme-picker.scss": {
-          "bytesInOutput": 480
+          "bytesInOutput": 651
         }
       },
-      "bytes": 481,
+      "bytes": 652,
       "ng-component": true
     },
     "ai-dashboard.component-JX6V7RHU.css": {
