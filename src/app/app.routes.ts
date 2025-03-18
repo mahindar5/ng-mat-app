@@ -21,4 +21,9 @@ export const routes: Routes = [
 			},
 		],
 	},
+	{
+
+		path: 'ai-chat',
+		loadComponent: () => import('./ai-dashboard/ai-chat/ai-chat.component').then(m => m.AiChatComponent),
+	}
 ];

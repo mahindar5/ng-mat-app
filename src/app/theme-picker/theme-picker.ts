@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
 	ChangeDetectionStrategy,
 	Component,
@@ -36,7 +35,6 @@ interface ColorCombinations {
 	encapsulation: ViewEncapsulation.None,
 	standalone: true,
 	imports: [
-		CommonModule,
 		MatButtonModule,
 		MatTooltipModule,
 		MatMenuModule,

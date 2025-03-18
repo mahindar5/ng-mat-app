@@ -1,14 +1,12 @@
-<!-- <mat-tab-nav-panel #tabPanel>
-	<router-outlet></router-outlet>
-</mat-tab-nav-panel>
-<footer>
-	<nav mat-tab-nav-bar [tabPanel]="tabPanel">
-		@for (link of links; track link) {
-		<a mat-tab-link [routerLink]="link.route" (click)="activeLink = link" [active]="activeLink === link">
-			{{ link.label }}
-		</a>
+<mat-tab-group animationDuration="300ms" [selectedIndex]="selectedTabIndex"
+	(selectedIndexChange)="onTabChanged($event)">
+	@for (link of links; track link) {
+	<mat-tab [label]="link.label">
+		@if (activeLink === link) {
+		<div class="tab-content">
+			<router-outlet></router-outlet>
+		</div>
 		}
-	</nav>
-</footer> -->
-
-<router-outlet></router-outlet>
+	</mat-tab>
+	}
+</mat-tab-group>
