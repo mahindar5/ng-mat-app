@@ -1,0 +1,26 @@
+name: ng-mat-app-ghrelease-ghpages-dispatch
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [ng-mat-app-released]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag to deploy'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  ng-mat-app-ghrelease-ghpages:
+    uses: mahindar5/ng-ion-app/.github/workflows/_ghrelease-ghpages.yml@main
+    with:
+      tag: ${{ github.event.client_payload.tag || inputs.tag }}
+    secrets:
+      SOURCE_REPO_PAT: ${{ secrets.SOURCE_REPO_PAT }}

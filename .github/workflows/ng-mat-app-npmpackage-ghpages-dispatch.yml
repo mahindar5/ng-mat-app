@@ -1,0 +1,16 @@
+name: ng-mat-app-npmpackage-ghpages-dispatch
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [ng-mat-app-updated]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  packages: read
+
+jobs:
+  ng-mat-app-npmpackage-ghpages:
+    uses: mahindar5/ng-ion-app/.github/workflows/_npmpackage-ghpages.yml@main
